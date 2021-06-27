@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://World.gd" type="Script" id=1]
+[ext_resource path="res://Backpack.gd" type="Script" id=2]
+[ext_resource path="res://Chest.gd" type="Script" id=3]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Add" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "add"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Change" type="Button" parent="."]
+margin_top = 27.7183
+margin_right = 12.0
+margin_bottom = 47.7183
+text = "change"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrintBefore" type="Button" parent="."]
+margin_left = 96.0
+margin_top = 30.0
+margin_right = 214.0
+margin_bottom = 50.0
+text = "print before load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="."]
+margin_left = 97.014
+margin_top = 3.14981
+margin_right = 138.014
+margin_bottom = 23.1498
+text = "save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="."]
+margin_left = 95.1241
+margin_top = 56.0665
+margin_right = 134.124
+margin_bottom = 76.0665
+text = "load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrintAfter" type="Button" parent="."]
+margin_left = 96.384
+margin_top = 81.8949
+margin_right = 202.384
+margin_bottom = 101.895
+text = "print after load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Backpack" type="Control" parent="." groups=[
+"data",
+]]
+margin_left = 96.384
+margin_top = 180.169
+margin_right = 136.384
+margin_bottom = 220.169
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Chest" type="Control" parent="." groups=[
+"data",
+]]
+margin_left = 11.3393
+margin_top = 154.97
+margin_right = 51.3393
+margin_bottom = 194.97
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Add" to="." method="_on_Add_pressed"]
+[connection signal="pressed" from="Change" to="." method="_on_Change_pressed"]
+[connection signal="pressed" from="PrintBefore" to="." method="_on_PrintBefore_pressed"]
+[connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="PrintAfter" to="." method="_on_PrintAfter_pressed"]
