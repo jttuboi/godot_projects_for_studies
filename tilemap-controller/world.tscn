@@ -1,0 +1,238 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://world.gd" type="Script" id=1]
+[ext_resource path="res://icon1.png" type="Texture" id=2]
+[ext_resource path="res://icon2.png" type="Texture" id=3]
+[ext_resource path="res://icon3.png" type="Texture" id=4]
+[ext_resource path="res://blocks.gd" type="Script" id=5]
+[ext_resource path="res://player.gd" type="Script" id=7]
+
+[sub_resource type="TileSet" id=1]
+0/name = "blue"
+0/texture = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 64, 64 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 1
+0/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 54, Vector2( 1, 0 ), 216, Vector2( 1, 1 ), 27 ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+1/name = "green"
+1/texture = ExtResource( 3 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 0, 0, 64, 64 )
+1/tile_mode = 1
+1/autotile/bitmask_mode = 1
+1/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 54, Vector2( 1, 0 ), 216, Vector2( 1, 1 ), 27 ]
+1/autotile/icon_coordinate = Vector2( 0, 0 )
+1/autotile/tile_size = Vector2( 32, 32 )
+1/autotile/spacing = 0
+1/autotile/occluder_map = [  ]
+1/autotile/navpoly_map = [  ]
+1/autotile/priority_map = [  ]
+1/autotile/z_index_map = [  ]
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape_one_way = false
+1/shape_one_way_margin = 0.0
+1/shapes = [  ]
+1/z_index = 0
+2/name = "red"
+2/texture = ExtResource( 4 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 64, 64 )
+2/tile_mode = 1
+2/autotile/bitmask_mode = 1
+2/autotile/bitmask_flags = [ Vector2( 0, 0 ), 432, Vector2( 0, 1 ), 54, Vector2( 1, 0 ), 152, Vector2( 1, 1 ), 27 ]
+2/autotile/icon_coordinate = Vector2( 0, 0 )
+2/autotile/tile_size = Vector2( 32, 32 )
+2/autotile/spacing = 0
+2/autotile/occluder_map = [  ]
+2/autotile/navpoly_map = [  ]
+2/autotile/priority_map = [  ]
+2/autotile/z_index_map = [  ]
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape_one_way = false
+2/shape_one_way_margin = 0.0
+2/shapes = [  ]
+2/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 64, 64 )
+
+[node name="World" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Ui" type="CanvasLayer" parent="."]
+
+[node name="Situation" type="Label" parent="Ui"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 56.0
+margin_bottom = 30.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorldMenu" type="Panel" parent="Ui"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -50.0
+margin_top = -50.0
+margin_right = 250.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 300, 110 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorldMenuTitle" type="Label" parent="Ui/WorldMenu"]
+margin_left = 14.2386
+margin_top = 5.50337
+margin_right = 90.2386
+margin_bottom = 19.5034
+text = "world menu"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="Ui/WorldMenu"]
+margin_left = 14.7683
+margin_top = 22.0
+margin_right = 53.7683
+margin_bottom = 42.0
+text = "load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="Ui/WorldMenu"]
+margin_left = 14.2386
+margin_top = 48.5568
+margin_right = 55.2386
+margin_bottom = 68.5568
+text = "save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="Button" parent="Ui/WorldMenu"]
+margin_left = 14.7683
+margin_top = 78.0
+margin_right = 50.7683
+margin_bottom = 98.0
+text = "exit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadTitle" type="Label" parent="Ui/WorldMenu"]
+margin_left = 162.0
+margin_top = 5.50337
+margin_right = 213.0
+margin_bottom = 19.5034
+text = "load list"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadList" type="ColorRect" parent="Ui/WorldMenu"]
+margin_left = 98.0
+margin_top = 22.0
+margin_right = 288.0
+margin_bottom = 92.0
+rect_min_size = Vector2( 190, 70 )
+color = Color( 0.533333, 0.533333, 0.533333, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SC" type="ScrollContainer" parent="Ui/WorldMenu/LoadList"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VB" type="VBoxContainer" parent="Ui/WorldMenu/LoadList/SC"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LimitBorder" type="StaticBody2D" parent="."]
+collision_layer = 2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Collision" type="CollisionPolygon2D" parent="LimitBorder"]
+polygon = PoolVector2Array( 0, 0, 16384, 0, 16384, 45056, 0, 45056, 0, 0.01, -16, -15.99, -16, 45072, 16400, 45072, 16400, -16, -16, -16 )
+
+[node name="Blocks" type="TileMap" parent="." groups=[
+"chunks",
+]]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+cell_quadrant_size = 1
+cell_custom_transform = Transform2D( 32, 0, 0, 32, 0, 0 )
+collision_layer = 4
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 6, 1, 0, 7, 1, 0, 8, 1, 0, 65536, 0, 0, 65545, 1, 0, 65546, 1, 0, 65547, 1, 0, 65548, 1, 0, 65549, 1, 0, 65550, 1, 0, 65551, 1, 0, 65552, 1, 0, 65553, 1, 0, 65554, 1, 0, 65555, 1, 0, 65556, 1, 0, 65557, 1, 0, 65558, 1, 0, 131072, 0, 0, 131094, 1, 0, 131095, 1, 0, 131096, 1, 1, 196608, 0, 0, 196631, 1, 0, 196632, 1, 65537, 262144, 0, 0, 262167, 1, 0, 327680, 0, 0, 327704, 1, 0, 393216, 0, 0, 393240, 1, 0, 458752, 0, 0, 458776, 1, 0, 524288, 0, 0, 524289, 0, 0, 589825, 0, 0, 589848, 2, 0, 589849, 2, 1, 655361, 0, 0, 655385, 2, 0, 655386, 2, 0, 720897, 0, 0, 720921, 2, 0, 720922, 2, 65537, 786434, 2, 0, 786435, 2, 0, 786436, 2, 0, 786457, 2, 0, 851973, 2, 0, 851974, 2, 0, 851975, 2, 0, 851976, 2, 0, 851977, 2, 0, 851993, 2, 0, 917514, 2, 0, 917515, 2, 0, 917516, 2, 0, 917517, 2, 0, 917527, 2, 0, 917528, 2, 0, 983054, 2, 0, 983055, 2, 0, 983056, 2, 0, 983057, 2, 0, 983058, 2, 0, 983059, 2, 0, 983060, 2, 0, 983061, 2, 0, 983062, 2, 0, 983063, 2, 0 )
+script = ExtResource( 5 )
+
+[node name="Player" type="KinematicBody2D" parent="." groups=[
+"data",
+]]
+position = Vector2( 200, 200 )
+collision_mask = 2
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Camera" type="Camera2D" parent="Player"]
+current = true
+
+[node name="icon1" type="Sprite" parent="Player"]
+position = Vector2( -32, -32 )
+texture = ExtResource( 2 )
+
+[node name="icon2" type="Sprite" parent="Player"]
+position = Vector2( 32, -32 )
+texture = ExtResource( 3 )
+
+[node name="icon3" type="Sprite" parent="Player"]
+position = Vector2( 0, 32 )
+texture = ExtResource( 4 )
+
+[node name="Collision" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 2 )
+[connection signal="pressed" from="Ui/WorldMenu/Load" to="." method="_on_Load_pressed"]
+[connection signal="pressed" from="Ui/WorldMenu/Save" to="." method="_on_Save_pressed"]
+[connection signal="pressed" from="Ui/WorldMenu/Exit" to="." method="_on_Exit_pressed"]
