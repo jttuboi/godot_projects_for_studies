@@ -1,0 +1,68 @@
+{
+	"default": {
+		"start": "greetings",
+		"sentences": {
+			"greetings": {
+				"sentence": "Hi, I'm Goku."
+			}
+		}
+	},
+	"welcome": {
+		"start": "greetings",
+		"sentences": {
+			"greetings": {
+				"sentence": "Hi.",
+				"next": "commentary"
+			},
+			"commentary": {
+				"sentence": "Don't forget my pão de queijo."
+			}
+		}
+	},
+	"buying_fruit": {
+		"start": "welcome",
+		"sentences": {
+			"whats_fruit": {
+				"sentence": "What's your choice?",
+				"answers": {
+					"1": {
+						"answer": "Avocado.",
+						"next": "location"
+					},
+					"2": {
+						"answer": "Banana.",
+						"next": "location"
+					}
+				}
+			},
+			"welcome": {
+				"sentence": "Welcome to homerland.",
+				"next": "whats_fruit"
+			},
+			"location": {
+				"sentence": "Here your's {answer}."
+			}
+		}
+	},
+	"gossiping": {
+		"start": "asking",
+		"sentences": {
+			"asking": {
+				"sentence": "Did you know about {npc2_name}?",
+				"answers": {
+					"1": {
+						"answer": "Yes.",
+						"next": "she_gossip_anyway"
+					},
+					"2": {
+						"answer": "No.",
+						"next": "she_gossip_anyway"
+					}
+				}
+			},
+			"she_gossip_anyway": {
+				"sentence": "{player_name} my friend. {npc2_name} is caught giving the {cow_name} to the {npc3_name}.<br>This is unforgivable, as he suffers from the evil of crazy cow."
+			}
+		}
+	}
+}

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scripts/text_effect_processor.gd" type="Script" id=1]
+
+
+
+[node name="TextEffectProcessor" type="Node"]
+script = ExtResource( 1 )

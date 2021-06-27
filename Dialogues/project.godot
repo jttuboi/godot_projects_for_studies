@@ -1,0 +1,118 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://src/scripts/character.gd"
+}, {
+"base": "Node",
+"class": "DialogueSystem",
+"language": "GDScript",
+"path": "res://src/scripts/dialogue_system.gd"
+}, {
+"base": "PanelContainer",
+"class": "JsonDock",
+"language": "GDScript",
+"path": "res://addons/json_editor/json_dock.gd"
+}, {
+"base": "",
+"class": "Npc",
+"language": "GDScript",
+"path": "res://src/scripts/npc.gd"
+}, {
+"base": "",
+"class": "Player",
+"language": "GDScript",
+"path": "res://src/scripts/player.gd"
+}, {
+"base": "Reference",
+"class": "WAT",
+"language": "GDScript",
+"path": "res://addons/WAT/namespace.gd"
+}, {
+"base": "",
+"class": "WATTest",
+"language": "GDScript",
+"path": "res://addons/WAT/core/test/test.gd"
+} ]
+_global_script_class_icons={
+"Character": "",
+"DialogueSystem": "",
+"JsonDock": "",
+"Npc": "",
+"Player": "",
+"WAT": "",
+"WATTest": ""
+}
+
+[WAT]
+
+Test_Directory="res://tests"
+Results_Directory="res://tests/results/WAT"
+Minimize_Window_When_Running_Tests=false
+TestStrategy={
+"repeat": 1,
+"strategy": "RunAll"
+}
+Tags=PoolStringArray(  )
+Display=8
+
+[application]
+
+config/name="Dialogues"
+run/main_scene="res://src/scenes/main.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Events="*res://src/scripts/events.gd"
+Consts="*res://src/scripts/consts.gd"
+
+[display]
+
+window/size/width=900
+
+[editor_plugins]
+
+enabled=PoolStringArray( "WAT", "json_editor" )
+
+[input]
+
+talk_npc1={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":49,"unicode":0,"echo":false,"script":null)
+ ]
+}
+talk_npc2={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":50,"unicode":0,"echo":false,"script":null)
+ ]
+}
+talk_npc3={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":51,"unicode":0,"echo":false,"script":null)
+ ]
+}
+walk_left={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":65,"unicode":0,"echo":false,"script":null)
+ ]
+}
+walk_right={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":68,"unicode":0,"echo":false,"script":null)
+ ]
+}
+
+[locale]
+
+translations=PoolStringArray( "res://src/texts/npc_1.en.translation", "res://src/texts/npc_1.pt_BR.translation", "res://src/texts/npc_2.en.translation", "res://src/texts/npc_2.pt_BR.translation", "res://src/texts/npc_3.en.translation", "res://src/texts/npc_3.pt_BR.translation" )

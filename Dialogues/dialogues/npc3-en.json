@@ -1,0 +1,47 @@
+{
+	"default": {
+		"start": "greetings",
+		"sentences": {
+			"greetings": {
+				"sentence": "Hi, I'm Goku."
+			}
+		}
+	},
+	"earning_weapon": {
+		"start": "message",
+		"sentences": {
+			"message": {
+				"sentence": "I think you will like this.",
+				"action": "earn_sword"
+			}
+		}
+	},
+	"talking_about_yesterday": {
+		"start": "greetings",
+		"sentences": {
+			"greetings": {
+				"sentence": "Good morning <c=255,0,0>{player_name}</c>.",
+				"next": "asking"
+			},
+			"good_answer": {
+				"sentence": "It's was cool, right?"
+			},
+			"asking": {
+				"sentence": "Have you been to the beach yesterday?",
+				"answers": {
+					"1": {
+						"answer": "Yes.",
+						"next": "good_answer"
+					},
+					"2": {
+						"answer": "No.",
+						"next": "bad_answer"
+					}
+				}
+			},
+			"bad_answer": {
+				"sentence": "Dude, you missed that show."
+			}
+		}
+	}
+}

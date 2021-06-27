@@ -1,0 +1,32 @@
+{
+	"default": {
+		"start": "greetings",
+		"sentences": {
+			"greetings": {
+				"sentence": "Hi, I'm Goku."
+			}
+		}
+	},
+	"hurry": {
+		"start": "advise",
+		"sentences": {
+			"advise": {
+				"sentence": "The meteor is <inc>comingggg!!!</inc>",
+				"action": "run_forrest_run"
+			}
+		}
+	},
+	"earning_recipe": {
+		"start": "take_it",
+		"sentences": {
+			"take_it": {
+				"sentence": "Here, take this recipe.",
+				"action": "earn_recipe",
+				"next": "enjoy_it"
+			},
+			"enjoy_it": {
+				"sentence": "Enjoy it."
+			}
+		}
+	}
+}

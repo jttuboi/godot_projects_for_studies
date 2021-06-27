@@ -1,0 +1,80 @@
+{
+	"default": {
+		"start": "greetings",
+		"sentences": {
+			"greetings": {
+				"sentence": "Oi, Eu sou Goku."
+			}
+		}
+	},
+	"welcome": {
+		"start": "greetings",
+		"sentences": {
+			"greetings": {
+				"sentence": "Hi.",
+				"next": "commentary"
+			},
+			"commentary": {
+				"sentence": "Don't forget my pão de queijo."
+			}
+		}
+	},
+	"buying_fruit": {
+		"start": "welcome",
+		"sentences": {
+			"whats_fruit": {
+				"sentence": "What's your choice?",
+				"answers": {
+					"1": {
+						"answer": "Avocado.",
+						"next": "location"
+					},
+					"2": {
+						"answer": "Banana.",
+						"next": "location"
+					}
+				}
+			},
+			"welcome": {
+				"sentence": "Welcome to homerland.",
+				"next": "whats_fruit"
+			},
+			"location": {
+				"sentence": "Here your's {answer}."
+			}
+		}
+	},
+	"gossiping": {
+		"start": "asking",
+		"sentences": {
+			"asking": {
+				"sentence": "Você soube sobre {npc2_name}?",
+				"answers": {
+					"1": {
+						"answer": "Sim.",
+						"next": "she_gossip_anyway"
+					},
+					"2": {
+						"answer": "Não.",
+						"next": "she_gossip_anyway"
+					}
+				}
+			},
+			"she_gossip_anyway": {
+				"sentence": "{player_name} {my_friend}. {npc2_name} foi pego dando {cow_article_gender} {cow_name} para o {npc3_name}.<br>Isto é imperdoável, pois ele sofre do mal da vaca louca.",
+				"custom_tokens": {
+					"my_friend": {
+						"reference": "player_gender",
+						"feminine" : "minha amiga",
+						"masculine" : "meu amigo"
+					},
+					"cow_article_gender": {
+						"reference": "cow_gender",
+						"feminine" : "a",
+						"masculine" : "o"
+					}
+				}
+			}
+		}
+	}
+}

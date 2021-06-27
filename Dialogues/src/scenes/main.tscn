@@ -1,0 +1,137 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://src/scenes/character_system.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/scenes/dialogue_system.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/scenes/npc.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/scripts/main.gd" type="Script" id=5]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.435294, 0.298039, 0.0627451, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.623529, 0.623529, 0.623529, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.588235, 0.164706, 0.164706, 1 )
+
+[node name="Main" type="Node"]
+script = ExtResource( 5 )
+
+[node name="Screen" type="Control" parent="."]
+margin_right = 900.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="House" type="Panel" parent="Screen"]
+margin_right = 300.0
+margin_bottom = 600.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Screen/House"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 56.0
+margin_bottom = 29.0
+text = "House"
+
+[node name="Town" type="Panel" parent="Screen"]
+margin_left = 300.0
+margin_right = 600.0
+margin_bottom = 600.0
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Screen/Town"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 55.0
+margin_bottom = 29.0
+text = "Town"
+
+[node name="Market" type="Panel" parent="Screen"]
+margin_left = 600.0
+margin_right = 900.0
+margin_bottom = 600.0
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Screen/Market"]
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 55.0
+margin_bottom = 29.0
+text = "Market"
+
+[node name="Instructions" type="Label" parent="Screen"]
+margin_left = 15.0
+margin_top = 525.0
+margin_right = 412.0
+margin_bottom = 556.0
+text = "keys A, D to move to left, right
+keys 1, 2, 3 to talk with npc1, npc2, npc3, respectively."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeLanguage" type="OptionButton" parent="Screen"]
+margin_left = 15.0
+margin_top = 565.0
+margin_right = 125.0
+margin_bottom = 585.0
+text = "English"
+items = [ "English", null, false, 0, null, "Portuguese Brazilian", null, false, 1, null, "Spanish", null, false, 2, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterSystem" parent="." instance=ExtResource( 1 )]
+
+[node name="Player" parent="CharacterSystem" instance=ExtResource( 2 )]
+position = Vector2( 150, 100 )
+_id = "player"
+_name = "Goku"
+
+[node name="Npc1" parent="CharacterSystem" instance=ExtResource( 4 )]
+position = Vector2( 450, 200 )
+_id = "npc1"
+_name = "Gohan"
+color = Color( 0, 0.0392157, 1, 1 )
+
+[node name="Npc2" parent="CharacterSystem" instance=ExtResource( 4 )]
+position = Vector2( 750, 300 )
+_id = "npc2"
+_name = "Chichi"
+location = 2
+color = Color( 0.00784314, 1, 0, 1 )
+
+[node name="Npc3" parent="CharacterSystem" instance=ExtResource( 4 )]
+position = Vector2( 750, 400 )
+_id = "npc3"
+_name = "Piccolo"
+location = 2
+color = Color( 0.945098, 1, 0, 1 )
+
+[node name="DialogueSystem" parent="." instance=ExtResource( 3 )]
+
+[node name="aaaa" type="Label" parent="."]
+margin_left = 54.6029
+margin_top = 675.033
+margin_right = 458.603
+margin_bottom = 710.033
+text = "Contém um exemplo de effects de como deve ser feito em C#:
+https://www.youtube.com/watch?v=jhwfA-QF54M"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="item_selected" from="Screen/ChangeLanguage" to="." method="_on_ChangeLanguage_item_selected"]
