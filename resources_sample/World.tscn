@@ -1,98 +1,265 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=19 format=2]
 
-[ext_resource path="res://world1/World1.gd" type="Script" id=1]
-[ext_resource path="res://world1/Backpack.gd" type="Script" id=2]
-[ext_resource path="res://world1/Chest.gd" type="Script" id=3]
+[ext_resource path="res://world2/Player.gd" type="Script" id=1]
+[ext_resource path="res://world1/TimeSystem.gd" type="Script" id=2]
+[ext_resource path="res://world2/MachineSystem.gd" type="Script" id=3]
+[ext_resource path="res://world1/World1.gd" type="Script" id=4]
+[ext_resource path="res://world1/Player.gd" type="Script" id=5]
+[ext_resource path="res://world1/Map.gd" type="Script" id=6]
+[ext_resource path="res://world1/MachineSystem.gd" type="Script" id=7]
+[ext_resource path="res://world2/InventorySystem.gd" type="Script" id=8]
+[ext_resource path="res://world2/TimeSystem.gd" type="Script" id=9]
+[ext_resource path="res://icon.png" type="Texture" id=10]
+[ext_resource path="res://world1/Jao.tscn" type="PackedScene" id=11]
+[ext_resource path="res://world2/Map.gd" type="Script" id=12]
+[ext_resource path="res://world2/World2.gd" type="Script" id=13]
+[ext_resource path="res://world1/InventorySystem.gd" type="Script" id=14]
+[ext_resource path="res://world2/Jao.tscn" type="PackedScene" id=15]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0, 0.568627, 0.435294, 1 )
+
+[sub_resource type="CircleShape2D" id=2]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0.568627, 0.0627451, 1 )
 
 [node name="World" type="Node2D"]
 
-[node name="World1" type="Node2D" parent="."]
-script = ExtResource( 1 )
-
-[node name="Add" type="Button" parent="World1"]
-margin_right = 12.0
-margin_bottom = 20.0
-text = "add"
+[node name="World1" type="Panel" parent="."]
+margin_right = 238.0
+margin_bottom = 140.0
+custom_styles/panel = SubResource( 1 )
+script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Change" type="Button" parent="World1"]
-margin_top = 27.7183
-margin_right = 12.0
-margin_bottom = 47.7183
-text = "change"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PrintBefore" type="Button" parent="World1"]
-margin_left = 96.0
-margin_top = 30.0
-margin_right = 214.0
-margin_bottom = 50.0
-text = "print before load"
+[node name="Label" type="Label" parent="World1"]
+margin_left = 9.0
+margin_top = 12.0
+margin_right = 46.0
+margin_bottom = 26.0
+text = "test 1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Save" type="Button" parent="World1"]
-margin_left = 97.014
-margin_top = 3.14981
-margin_right = 138.014
-margin_bottom = 23.1498
+margin_left = 186.919
+margin_top = 6.88107
+margin_right = 227.919
+margin_bottom = 26.8811
 text = "save"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Load" type="Button" parent="World1"]
-margin_left = 95.1241
-margin_top = 56.0665
-margin_right = 134.124
-margin_bottom = 76.0665
+margin_left = 187.525
+margin_top = 32.3136
+margin_right = 226.525
+margin_bottom = 52.3136
 text = "load"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PrintAfter" type="Button" parent="World1"]
-margin_left = 96.384
-margin_top = 81.8949
-margin_right = 202.384
-margin_bottom = 101.895
-text = "print after load"
+[node name="Reset" type="Button" parent="World1"]
+margin_left = 135.0
+margin_top = 7.0
+margin_right = 180.0
+margin_bottom = 27.0
+text = "reset"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Backpack" type="Control" parent="World1" groups=[
-"data",
-]]
-margin_left = 96.384
-margin_top = 180.169
-margin_right = 136.384
-margin_bottom = 220.169
+[node name="TimeSystem" type="Node" parent="World1"]
 script = ExtResource( 2 )
+
+[node name="InventorySystem" type="Node" parent="World1"]
+script = ExtResource( 14 )
+
+[node name="ChangeItem" type="Button" parent="World1/InventorySystem"]
+margin_left = 10.0173
+margin_top = 67.3413
+margin_right = 163.017
+margin_bottom = 87.3413
+text = "change backpack item"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Chest" type="Control" parent="World1" groups=[
-"data",
-]]
-margin_left = 11.3393
-margin_top = 154.97
-margin_right = 51.3393
-margin_bottom = 194.97
+[node name="MachineSystem" type="Node" parent="World1"]
+script = ExtResource( 7 )
+
+[node name="ChangeItem" type="Button" parent="World1/MachineSystem"]
+margin_left = 9.82234
+margin_top = 90.8325
+margin_right = 139.822
+margin_bottom = 110.833
+text = "change chest item"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Map" type="Node2D" parent="World1"]
+script = ExtResource( 6 )
+
+[node name="AddRemoveNpc" type="Button" parent="World1/Map"]
+margin_left = 9.96176
+margin_top = 114.679
+margin_right = 125.962
+margin_bottom = 134.679
+text = "add/remove npc"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor" type="TileMap" parent="World1/Map"]
+format = 1
+
+[node name="_" type="YSort" parent="World1/Map"]
+
+[node name="Player" type="KinematicBody2D" parent="World1/Map/_"]
+position = Vector2( 250, 250 )
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World1/Map/_/Player"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World1/Map/_/Player"]
+shape = SubResource( 2 )
+
+[node name="Jao" parent="World1/Map/_" instance=ExtResource( 11 )]
+position = Vector2( 300, 300 )
+
+[node name="World2" type="Panel" parent="."]
+margin_left = 400.0
+margin_right = 638.0
+margin_bottom = 140.0
+custom_styles/panel = SubResource( 3 )
+script = ExtResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="World2"]
+margin_left = 9.0
+margin_top = 12.0
+margin_right = 46.0
+margin_bottom = 26.0
+text = "test 1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Save" type="Button" parent="World2"]
+margin_left = 125.874
+margin_top = 8.75594
+margin_right = 227.874
+margin_bottom = 28.7559
+text = "save/load test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Load" type="Button" parent="World2"]
+margin_right = 12.0
+margin_bottom = 20.0
+text = "load"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Reset" type="Button" parent="World2"]
+margin_left = 51.5466
+margin_top = 9.19055
+margin_right = 103.547
+margin_bottom = 29.1906
+text = "reset"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeSystem" type="Node" parent="World2"]
+script = ExtResource( 9 )
+
+[node name="InventorySystem" type="Node" parent="World2"]
+script = ExtResource( 8 )
+
+[node name="ChangeItem" type="Button" parent="World2/InventorySystem"]
+margin_left = 411.804
+margin_top = 64.6716
+margin_right = 564.804
+margin_bottom = 84.6716
+text = "change backpack item"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MachineSystem" type="Node" parent="World2"]
 script = ExtResource( 3 )
+
+[node name="ChangeItem" type="Button" parent="World2/MachineSystem"]
+margin_left = 414.279
+margin_top = 89.4977
+margin_right = 544.279
+margin_bottom = 109.498
+text = "change chest item"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="pressed" from="World1/Add" to="World1" method="_on_Add_pressed"]
-[connection signal="pressed" from="World1/Change" to="World1" method="_on_Change_pressed"]
-[connection signal="pressed" from="World1/PrintBefore" to="World1" method="_on_PrintBefore_pressed"]
+[node name="Map" type="Node2D" parent="World2"]
+script = ExtResource( 12 )
+
+[node name="AddRemoveNpc" type="Button" parent="World2/Map"]
+margin_left = 13.9663
+margin_top = 113.344
+margin_right = 129.966
+margin_bottom = 133.344
+text = "add/remove npc"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Floor" type="TileMap" parent="World2/Map"]
+format = 1
+
+[node name="_" type="YSort" parent="World2/Map"]
+
+[node name="Player" type="KinematicBody2D" parent="World2/Map/_"]
+position = Vector2( 250, 250 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="World2/Map/_/Player"]
+scale = Vector2( 0.3, 0.3 )
+texture = ExtResource( 10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World2/Map/_/Player"]
+shape = SubResource( 2 )
+
+[node name="Jao" parent="World2/Map/_" instance=ExtResource( 15 )]
+position = Vector2( 300, 300 )
+
 [connection signal="pressed" from="World1/Save" to="World1" method="_on_Save_pressed"]
 [connection signal="pressed" from="World1/Load" to="World1" method="_on_Load_pressed"]
-[connection signal="pressed" from="World1/PrintAfter" to="World1" method="_on_PrintAfter_pressed"]
+[connection signal="pressed" from="World1/Reset" to="World1" method="_on_Reset_pressed"]
+[connection signal="pressed" from="World1/InventorySystem/ChangeItem" to="World1/InventorySystem" method="_on_ChangeItem_pressed"]
+[connection signal="pressed" from="World1/MachineSystem/ChangeItem" to="World1/MachineSystem" method="_on_ChangeItem_pressed"]
+[connection signal="pressed" from="World1/Map/AddRemoveNpc" to="World1/Map" method="_on_AddRemoveNpc_pressed"]
+[connection signal="pressed" from="World2/Save" to="World2" method="_on_Save_pressed"]
+[connection signal="pressed" from="World2/Load" to="World2" method="_on_Load_pressed"]
+[connection signal="pressed" from="World2/Reset" to="World2" method="_on_Reset_pressed"]
+[connection signal="pressed" from="World2/InventorySystem/ChangeItem" to="World2/InventorySystem" method="_on_ChangeItem_pressed"]
+[connection signal="pressed" from="World2/MachineSystem/ChangeItem" to="World2/MachineSystem" method="_on_ChangeItem_pressed"]
+[connection signal="pressed" from="World2/Map/AddRemoveNpc" to="World2/Map" method="_on_AddRemoveNpc_pressed"]

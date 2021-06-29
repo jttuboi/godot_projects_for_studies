@@ -32,7 +32,7 @@ func _save_world():
 				save_data[key] = data[key]
 
 	var file = File.new()
-	file.open("res://save_game/world1.tres", File.WRITE)
+	file.open("res://save_game/world2.tres", File.WRITE)
 	file.store_var(save_data)
 	file.close()
 
@@ -64,6 +64,6 @@ func _clear_data():
 func _show_file_data():
 	print("==== file data")
 	var file  = File.new()
-	file.open("res://save_game/world1.tres", File.READ)
+	file.open("res://save_game/world2.tres", File.READ)
 	print(file.get_var())
 	file.close()
