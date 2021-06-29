@@ -9,15 +9,15 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Resource",
+"base": "Reference",
 "class": "Item",
 "language": "GDScript",
-"path": "res://item.gd"
+"path": "res://world1/item.gd"
 }, {
-"base": "Object",
+"base": "Reference",
 "class": "Item2",
 "language": "GDScript",
-"path": "res://item2.gd"
+"path": "res://world1/item2.gd"
 } ]
 _global_script_class_icons={
 "Item": "",
@@ -32,7 +32,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Items="*res://items.gd"
+Items="*res://world1/items.gd"
 
 [physics]
 
