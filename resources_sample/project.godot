@@ -16,7 +16,6 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Items="*res://world1/items.gd"
 Signals="*res://world1/signals.gd"
 
 [input]

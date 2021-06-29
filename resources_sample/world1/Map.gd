@@ -21,6 +21,7 @@ func _on_AddRemoveNpc_pressed():
 	else:
 		$_.add_child(Ze.instance())
 		has_ze = true
+	Signals.emit_signal("data_updated")
 
 
 func set_load_data(data: Dictionary):

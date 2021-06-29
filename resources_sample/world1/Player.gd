@@ -3,6 +3,7 @@ extends KinematicBody2D
 export (int) var speed = 200
 
 var velocity = Vector2.ZERO
+var temp
 
 
 func _physics_process(_delta: float):
@@ -11,6 +12,7 @@ func _physics_process(_delta: float):
 
 
 func get_input():
+	temp = velocity
 	velocity = Vector2()
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
@@ -21,6 +23,8 @@ func get_input():
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 	velocity = velocity.normalized() * speed
+	if velocity != temp:
+		Signals.emit_signal("data_updated")
 
 
 func set_load_data(data: Dictionary):
@@ -38,4 +42,4 @@ func show_data():
 
 
 func clear_data():
-	position = Vector2(250, 250)
+	position = Vector2(250, 50)

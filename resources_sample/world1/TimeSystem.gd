@@ -9,6 +9,7 @@ func _physics_process(delta: float):
 	if _last_second < time:
 		_last_second += 1.0
 		Signals.emit_signal("second_changed", int(time))
+		Signals.emit_signal("data_updated")
 
 
 func set_load_data(data: Dictionary):
