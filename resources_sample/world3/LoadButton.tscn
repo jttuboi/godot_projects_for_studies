@@ -1,0 +1,47 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://world3/LoadButton.gd" type="Script" id=1]
+
+[node name="LoadButton" type="ColorRect"]
+margin_right = 216.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+color = Color( 0.121569, 0.0745098, 0.458824, 1 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Filename" type="Label" parent="."]
+margin_left = 0.703434
+margin_top = 0.974008
+margin_right = 56.7034
+margin_bottom = 14.974
+text = "filename"
+
+[node name="Version" type="Label" parent="."]
+margin_left = 1.57003
+margin_top = 14.2815
+margin_right = 48.57
+margin_bottom = 28.2815
+text = "version"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameName" type="Label" parent="."]
+margin_left = 37.1837
+margin_top = 14.3804
+margin_right = 112.184
+margin_bottom = 28.3804
+text = "game name"
+
+[node name="Data" type="Label" parent="."]
+margin_left = 0.732285
+margin_top = 26.6047
+margin_right = 27.7323
+margin_bottom = 40.6047
+text = "data"
+__meta__ = {
+"_edit_use_anchors_": false
+}

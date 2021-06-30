@@ -28,12 +28,18 @@ _global_script_classes=[ {
 "class": "WorldData",
 "language": "GDScript",
 "path": "res://world2/WorldData.gd"
+}, {
+"base": "Resource",
+"class": "WorldData2",
+"language": "GDScript",
+"path": "res://world3/WorldData2.gd"
 } ]
 _global_script_class_icons={
 "BackpackData": "",
 "ChestData": "",
 "ItemData": "",
-"WorldData": ""
+"WorldData": "",
+"WorldData2": ""
 }
 
 [application]

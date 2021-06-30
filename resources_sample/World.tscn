@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://world2/Player.gd" type="Script" id=1]
 [ext_resource path="res://world1/TimeSystem.gd" type="Script" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://world2/World2.gd" type="Script" id=13]
 [ext_resource path="res://world1/InventorySystem.gd" type="Script" id=14]
 [ext_resource path="res://world2/Jao.tscn" type="PackedScene" id=15]
+[ext_resource path="res://world3/World3.gd" type="Script" id=16]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0.568627, 0.435294, 1 )
@@ -23,6 +24,9 @@ bg_color = Color( 0, 0.568627, 0.435294, 1 )
 
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0, 0.423529, 0.568627, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0.164706, 0.486275, 1 )
 
 [node name="World" type="Node2D"]
 
@@ -40,7 +44,8 @@ margin_left = 9.0
 margin_top = 12.0
 margin_right = 46.0
 margin_bottom = 26.0
-text = "test 1"
+text = "test 1
+only dictionary"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -165,7 +170,8 @@ margin_left = 9.0
 margin_top = 12.0
 margin_right = 46.0
 margin_bottom = 26.0
-text = "test 2"
+text = "test 2
+resource"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -275,6 +281,98 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="World3" type="Panel" parent="."]
+margin_left = 0.332581
+margin_top = 423.715
+margin_right = 238.333
+margin_bottom = 572.715
+custom_styles/panel = SubResource( 4 )
+script = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="World3"]
+margin_left = 8.67645
+margin_top = 8.00906
+margin_right = 160.676
+margin_bottom = 39.0091
+text = "test 3
+create list of save game"
+
+[node name="GenerateSaveGame" type="Button" parent="World3"]
+margin_left = 107.443
+margin_top = 123.339
+margin_right = 232.443
+margin_bottom = 143.339
+text = "generate save file"
+
+[node name="WorldName" type="LineEdit" parent="World3"]
+margin_left = 5.0
+margin_top = 120.0
+margin_right = 102.0
+margin_bottom = 144.0
+max_length = 30
+placeholder_text = "world name"
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UseNoResourceLoad" type="Button" parent="World3"]
+margin_left = 6.67419
+margin_top = 52.7262
+margin_right = 18.6742
+margin_bottom = 72.7262
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShowLoads" type="Button" parent="World3"]
+margin_left = 106.0
+margin_top = 47.0
+margin_right = 230.0
+margin_bottom = 67.0
+text = "show save games"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ClearLoads" type="Button" parent="World3"]
+margin_left = 106.955
+margin_top = 72.6448
+margin_right = 228.955
+margin_bottom = 92.6448
+text = "clear save games"
+
+[node name="LoadList" type="ColorRect" parent="World3"]
+margin_left = 248.986
+margin_top = -11.681
+margin_right = 487.986
+margin_bottom = 156.319
+color = Color( 0, 0.0666667, 0.329412, 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="_" type="ScrollContainer" parent="World3/LoadList"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="_" type="VBoxContainer" parent="World3/LoadList/_"]
+margin_right = 239.0
+margin_bottom = 168.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/separation = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [connection signal="pressed" from="World1/Save" to="World1" method="_on_Save_pressed"]
 [connection signal="pressed" from="World1/Load" to="World1" method="_on_Load_pressed"]
 [connection signal="pressed" from="World1/Reset" to="World1" method="_on_Reset_pressed"]
@@ -287,3 +385,6 @@ __meta__ = {
 [connection signal="pressed" from="World2/InventorySystem/ChangeItem" to="World2/InventorySystem" method="_on_ChangeItem_pressed"]
 [connection signal="pressed" from="World2/MachineSystem/ChangeItem" to="World2/MachineSystem" method="_on_ChangeItem_pressed"]
 [connection signal="pressed" from="World2/Map/AddRemoveNpc" to="World2/Map" method="_on_AddRemoveNpc_pressed"]
+[connection signal="pressed" from="World3/GenerateSaveGame" to="World3" method="_on_GenerateSaveGame_pressed"]
+[connection signal="pressed" from="World3/ShowLoads" to="World3" method="_on_ShowLoads_pressed"]
+[connection signal="pressed" from="World3/ClearLoads" to="World3" method="_on_ClearLoads_pressed"]

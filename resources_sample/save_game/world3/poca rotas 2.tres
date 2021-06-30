@@ -1,0 +1,13 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://world3/WorldData2.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+info_data = {
+"version": 6,
+"world_name": "poca rotas 2"
+}
+data = {
+"player_position": Vector2( 965, 598 )
+}
