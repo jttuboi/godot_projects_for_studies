@@ -8,6 +8,34 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Resource",
+"class": "BackpackData",
+"language": "GDScript",
+"path": "res://world2/BackpackData.gd"
+}, {
+"base": "Resource",
+"class": "ChestData",
+"language": "GDScript",
+"path": "res://world2/ChestData.gd"
+}, {
+"base": "Resource",
+"class": "ItemData",
+"language": "GDScript",
+"path": "res://world2/ItemData.gd"
+}, {
+"base": "Resource",
+"class": "WorldData",
+"language": "GDScript",
+"path": "res://world2/WorldData.gd"
+} ]
+_global_script_class_icons={
+"BackpackData": "",
+"ChestData": "",
+"ItemData": "",
+"WorldData": ""
+}
+
 [application]
 
 config/name="Resources Sample"

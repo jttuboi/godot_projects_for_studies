@@ -1,5 +1,7 @@
 extends Panel
 
+export (Resource) var test
+
 
 func _ready():
 	randomize()
@@ -8,17 +10,17 @@ func _ready():
 
 
 func _on_Save_pressed():
-	_show_data() # mostra dados do jogo antes de salvar
+	#_show_data() # mostra dados do jogo antes de salvar
 	_save_world() # salva dados do jogo no save file
-	_show_file_data() # mostra dados do save file
-	_show_data() # mostra dados do jogo
+	#_show_file_data() # mostra dados do save file
+	#_show_data() # mostra dados do jogo
 
 
 func _on_Load_pressed():
-	_show_data() # mostra dados do jogo
-	_show_file_data() # mostra dados do save file
+	#_show_data() # mostra dados do jogo
+	#_show_file_data() # mostra dados do save file
 	_load_world() # load dados do jogo do save file
-	_show_data() # mostra dados do jogo
+	#_show_data() # mostra dados do jogo
 
 
 func _on_Reset_pressed():
@@ -30,21 +32,18 @@ func _on_data_updated():
 
 
 func _save_world():
-	var file = File.new()
-	file.open("res://save_game/world2.tres", File.WRITE)
-	file.store_var(_get_save_data())
-	file.close()
-
+	var res = WorldData.new()
+	res.set_data(_get_save_data())
+# warning-ignore:return_value_discarded
+	ResourceSaver.save("res://save_game/world2.tres", res)
 
 func _load_world():
-	var file  = File.new()
-	file.open("res://save_game/world2.tres", File.READ)
-	var save_data = file.get_var()
-	file.close()
-
+	var res = load("res://save_game/world2.tres")
+	print(res)
+	
 	for child in get_children():
 		if child.has_method("set_load_data"):
-			child.set_load_data(save_data)
+			child.set_load_data(res.data)
 	Signals.emit_signal("data_updated")
 
 

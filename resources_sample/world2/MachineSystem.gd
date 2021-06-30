@@ -1,16 +1,8 @@
 extends Node
 
-var chest = {
-	0: {
-		items = [
-			{ id = -1, qn = 0, ql = 1 },
-			{ id = -1, qn = 0, ql = 1 },
-			{ id = -1, qn = 0, ql = 1 },
-			{ id = -1, qn = 0, ql = 1 },
-			{ id = -1, qn = 0, ql = 1 },
-		]
-	}
-}
+var chests = [
+	ChestData.new()
+]
 
 
 func _on_ChangeItem_pressed():
@@ -20,35 +12,27 @@ func _on_ChangeItem_pressed():
 	var qn = (randi() % 99 + 1) if (id != -1) else 0 # 1..99
 	var ql = (randi() % 5 + 1) if (id != -1) else 1 # 1..4
 	
-	chest[0].items[slot_idx].id = id
-	chest[0].items[slot_idx].qn = qn
-	chest[0].items[slot_idx].ql = ql
+	chests[0].items[slot_idx].id = id
+	chests[0].items[slot_idx].qn = qn
+	chests[0].items[slot_idx].ql = ql
 	Signals.emit_signal("data_updated")
 
 
 func set_load_data(data: Dictionary):
-	chest = data.chest
+	chests = data.chests
 
 
 func get_save_data():
 	return {
-		"chest": chest
+		"chests": chests
 	}
 
 
 func show_data():
-	prints("chest =", chest)
+	prints("chests =", chests)
 
 
 func clear_data():
-	chest = {
-		0: {
-			items = [
-				{ id = -1, qn = 0, ql = 1 },
-				{ id = -1, qn = 0, ql = 1 },
-				{ id = -1, qn = 0, ql = 1 },
-				{ id = -1, qn = 0, ql = 1 },
-				{ id = -1, qn = 0, ql = 1 },
-			]
-		}
-	}
+	chests = [
+		ChestData.new()
+	]

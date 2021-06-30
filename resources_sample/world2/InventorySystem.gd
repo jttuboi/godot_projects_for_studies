@@ -1,15 +1,6 @@
 extends Node
 
-var backpack = {
-	id = 0,
-	items = [
-		{ id = -1, qn = 0, ql = 1 },
-		{ id = -1, qn = 0, ql = 1 },
-		{ id = -1, qn = 0, ql = 1 },
-		{ id = -1, qn = 0, ql = 1 },
-		{ id = -1, qn = 0, ql = 1 },
-	]
-}
+var backpack = BackpackData.new()
 
 
 func _on_ChangeItem_pressed():
@@ -40,13 +31,4 @@ func show_data():
 
 
 func clear_data():
-	backpack = {
-		id = 0,
-		items = [
-			{ id = -1, qn = 0, ql = 1 },
-			{ id = -1, qn = 0, ql = 1 },
-			{ id = -1, qn = 0, ql = 1 },
-			{ id = -1, qn = 0, ql = 1 },
-			{ id = -1, qn = 0, ql = 1 },
-		]
-	}
+	backpack = BackpackData.new()
