@@ -1,0 +1,96 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://laser_effect/laser_effect.gd" type="Script" id=1]
+[ext_resource path="res://shared/pixel.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform sampler2D NOISE_PATTERN1;
+uniform sampler2D NOISE_PATTERN2;
+uniform vec2 scroll1 = vec2(1.0, 0.4);
+uniform vec2 scroll2 = vec2(0.2, 1.4);
+
+uniform float xStretch = 1.0;
+uniform float yStretch = 0.1;
+
+uniform float speed: hint_range(0, 1) = 0.05;
+uniform float laserSize: hint_range(0, 1) = 0.5; // limit the range (0.0 .. 1.0)
+uniform float wobbliness: hint_range(0, 1) = 0.1; // oscillation
+
+uniform vec4 color1: hint_color;
+uniform vec4 color2: hint_color;
+uniform float colorMixFactor: hint_range(0, 10) = 1;
+uniform float glowFactor = 2.5;
+
+uniform sampler2D TRANSPARENCY_VARIATION;
+uniform float minAlpha = 0.3;
+
+void fragment() {
+	vec2 stretched_UV = UV;
+	stretched_UV.x *= xStretch;
+	stretched_UV.y *= yStretch;
+	
+	float intensity1 = textureLod(NOISE_PATTERN1, stretched_UV + TIME * scroll1 * speed, 0.0).r;
+	float intensity2 = textureLod(NOISE_PATTERN2, stretched_UV + TIME * scroll2 * speed, 0.0).r;
+	float intensity = intensity1 * intensity2;
+	
+	float centrality = (1.0 - abs(UV.y -0.5)) * 0.5;
+	
+	if (wobbliness * intensity + (1.0 - wobbliness) * centrality > 1.0 - laserSize) {
+		intensity *= centrality;
+		
+		COLOR = mix(color1, color2, clamp(intensity * colorMixFactor, 0.0, 1.0)) * glowFactor;
+		
+		float alpha = textureLod(TRANSPARENCY_VARIATION, stretched_UV + TIME * scroll1 * speed, 0.0).r;
+		COLOR.a = minAlpha + alpha * (1.0 - minAlpha);
+	}
+}"
+
+[sub_resource type="OpenSimplexNoise" id=3]
+
+[sub_resource type="NoiseTexture" id=4]
+seamless = true
+noise = SubResource( 3 )
+
+[sub_resource type="OpenSimplexNoise" id=5]
+
+[sub_resource type="NoiseTexture" id=6]
+seamless = true
+noise = SubResource( 5 )
+
+[sub_resource type="OpenSimplexNoise" id=7]
+
+[sub_resource type="NoiseTexture" id=8]
+seamless = true
+noise = SubResource( 7 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/scroll1 = Vector2( 1, 0.4 )
+shader_param/scroll2 = Vector2( 0.2, 1.4 )
+shader_param/xStretch = 3.482
+shader_param/yStretch = 0.1
+shader_param/speed = 0.199
+shader_param/laserSize = 0.696
+shader_param/wobbliness = 0.38
+shader_param/color1 = Color( 0, 0, 0, 1 )
+shader_param/color2 = Color( 1, 0, 0, 1 )
+shader_param/colorMixFactor = 3.298
+shader_param/glowFactor = 2.955
+shader_param/minAlpha = 0.3
+shader_param/NOISE_PATTERN1 = SubResource( 4 )
+shader_param/NOISE_PATTERN2 = SubResource( 6 )
+shader_param/TRANSPARENCY_VARIATION = SubResource( 8 )
+
+[node name="LaserEffect" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Beam" type="Line2D" parent="."]
+material = SubResource( 2 )
+position = Vector2( -296, -56 )
+points = PoolVector2Array( 0, 60, 600, 60 )
+width = 50.0
+default_color = Color( 0.4, 0.501961, 1, 0 )
+texture = ExtResource( 2 )
+texture_mode = 2

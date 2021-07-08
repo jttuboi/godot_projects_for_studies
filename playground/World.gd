@@ -1,6 +1,9 @@
 extends Node
 
 
+
+
+
 ## https://www.youtube.com/watch?v=D7XSL0zBOwI
 func _on_ExplosionEffect_pressed():
 	_clear_container()
@@ -79,6 +82,14 @@ func _on_SpriteDeformationEffect_pressed():
 	var SpriteDeformationEffectScene = preload("res://sprite_deformation_effect/sprite_deformation_effect.tscn")
 	var sprite_deformation_effect = SpriteDeformationEffectScene.instance()
 	_add_container(sprite_deformation_effect)
+
+
+# https://www.youtube.com/watch?v=eT9ztkG2PTU
+func _on_LaserEffect_pressed():
+	_clear_container()
+	var LaserEffectScene = preload("res://laser_effect/laser_effect.tscn")
+	var laser_effect = LaserEffectScene.instance()
+	_add_container(laser_effect)
 
 
 func _add_container(node):
