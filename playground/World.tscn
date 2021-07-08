@@ -19,7 +19,7 @@ __meta__ = {
 }
 
 [node name="_" type="VBoxContainer" parent="Menu/_"]
-margin_right = 151.0
+margin_right = 184.0
 margin_bottom = 720.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
@@ -31,26 +31,56 @@ __meta__ = {
 }
 
 [node name="_" type="Control" parent="Menu/_/_"]
-margin_right = 151.0
+margin_right = 184.0
 margin_bottom = 10.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="ExplosionEffect" type="Button" parent="Menu/_/_"]
 margin_top = 15.0
-margin_right = 151.0
+margin_right = 184.0
 margin_bottom = 35.0
 text = "explosion effect"
 
 [node name="HeartExplosionEffect" type="Button" parent="Menu/_/_"]
 margin_top = 40.0
-margin_right = 151.0
+margin_right = 184.0
 margin_bottom = 60.0
 text = "heart explosion effect"
 
-[node name="_2" type="Control" parent="Menu/_/_"]
+[node name="CreationByParticlesEffect" type="Button" parent="Menu/_/_"]
 margin_top = 65.0
-margin_right = 151.0
-margin_bottom = 75.0
+margin_right = 184.0
+margin_bottom = 85.0
+text = "create by particles effect"
+
+[node name="FlashAnimationEffect" type="Button" parent="Menu/_/_"]
+margin_top = 90.0
+margin_right = 184.0
+margin_bottom = 110.0
+text = "flash animation effect"
+
+[node name="FlashTweenEffect" type="Button" parent="Menu/_/_"]
+margin_top = 115.0
+margin_right = 184.0
+margin_bottom = 135.0
+text = "flash tween effect"
+
+[node name="FlashTweenEffect2" type="Button" parent="Menu/_/_"]
+margin_top = 140.0
+margin_right = 184.0
+margin_bottom = 160.0
+text = "flash tween effect 2"
+
+[node name="WalkingFootstepAnimation" type="Button" parent="Menu/_/_"]
+margin_top = 165.0
+margin_right = 184.0
+margin_bottom = 185.0
+text = "walking footstep animation"
+
+[node name="_2" type="Control" parent="Menu/_/_"]
+margin_top = 190.0
+margin_right = 184.0
+margin_bottom = 200.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Container" type="Node2D" parent="."]
@@ -60,3 +90,8 @@ position = Vector2( 700, 360 )
 
 [connection signal="pressed" from="Menu/_/_/ExplosionEffect" to="." method="_on_ExplosionEffect_pressed"]
 [connection signal="pressed" from="Menu/_/_/HeartExplosionEffect" to="." method="_on_HeartExplosionEffect_pressed"]
+[connection signal="pressed" from="Menu/_/_/CreationByParticlesEffect" to="." method="_on_CreationByParticlesEffect_pressed"]
+[connection signal="pressed" from="Menu/_/_/FlashAnimationEffect" to="." method="_on_FlashAnimationEffect_pressed"]
+[connection signal="pressed" from="Menu/_/_/FlashTweenEffect" to="." method="_on_FlashTweenEffect_pressed"]
+[connection signal="pressed" from="Menu/_/_/FlashTweenEffect2" to="." method="_on_FlashTweenEffect2_pressed"]
+[connection signal="pressed" from="Menu/_/_/WalkingFootstepAnimation" to="." method="_on_WalkingFootstepAnimation_pressed"]
