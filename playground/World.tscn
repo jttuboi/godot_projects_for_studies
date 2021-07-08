@@ -83,10 +83,16 @@ margin_right = 184.0
 margin_bottom = 210.0
 text = "typing animation"
 
-[node name="_2" type="Control" parent="Menu/_/_"]
+[node name="SpriteDeformationEffect" type="Button" parent="Menu/_/_"]
 margin_top = 215.0
 margin_right = 184.0
-margin_bottom = 225.0
+margin_bottom = 235.0
+text = "sprite deformation effect"
+
+[node name="_2" type="Control" parent="Menu/_/_"]
+margin_top = 240.0
+margin_right = 184.0
+margin_bottom = 250.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Container" type="Node2D" parent="."]
@@ -102,3 +108,4 @@ position = Vector2( 700, 360 )
 [connection signal="pressed" from="Menu/_/_/FlashTweenEffect2" to="." method="_on_FlashTweenEffect2_pressed"]
 [connection signal="pressed" from="Menu/_/_/WalkingFootstepAnimation" to="." method="_on_WalkingFootstepAnimation_pressed"]
 [connection signal="pressed" from="Menu/_/_/TypingAnimation" to="." method="_on_TypingAnimation_pressed"]
+[connection signal="pressed" from="Menu/_/_/SpriteDeformationEffect" to="." method="_on_SpriteDeformationEffect_pressed"]

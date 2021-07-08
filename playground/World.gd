@@ -73,6 +73,14 @@ func _on_TypingAnimation_pressed():
 	_add_container(typing_animation)
 
 
+# https://www.youtube.com/watch?v=BZp8DwPdj4s
+func _on_SpriteDeformationEffect_pressed():
+	_clear_container()
+	var SpriteDeformationEffectScene = preload("res://sprite_deformation_effect/sprite_deformation_effect.tscn")
+	var sprite_deformation_effect = SpriteDeformationEffectScene.instance()
+	_add_container(sprite_deformation_effect)
+
+
 func _add_container(node):
 	node.position = $ContainerCenter.position
 	$Container.add_child(node)
