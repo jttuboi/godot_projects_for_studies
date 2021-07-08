@@ -65,6 +65,14 @@ func _on_WalkingFootstepAnimation_pressed():
 	_add_container(walking_duck_scene)
 
 
+## https://www.youtube.com/watch?v=iFJtXrwacY0
+func _on_TypingAnimation_pressed():
+	_clear_container()
+	var TypingAnimationScene = preload("res://typing_animation/typing_animation.tscn")
+	var typing_animation = TypingAnimationScene.instance()
+	_add_container(typing_animation)
+
+
 func _add_container(node):
 	node.position = $ContainerCenter.position
 	$Container.add_child(node)
