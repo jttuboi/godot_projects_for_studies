@@ -19,7 +19,7 @@ __meta__ = {
 }
 
 [node name="_" type="VBoxContainer" parent="Menu/_"]
-margin_right = 114.0
+margin_right = 151.0
 margin_bottom = 720.0
 mouse_filter = 2
 input_pass_on_modal_close_click = false
@@ -31,20 +31,26 @@ __meta__ = {
 }
 
 [node name="_" type="Control" parent="Menu/_/_"]
-margin_right = 114.0
+margin_right = 151.0
 margin_bottom = 10.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="ExplosionEffect" type="Button" parent="Menu/_/_"]
 margin_top = 15.0
-margin_right = 114.0
+margin_right = 151.0
 margin_bottom = 35.0
 text = "explosion effect"
 
-[node name="_2" type="Control" parent="Menu/_/_"]
+[node name="HeartExplosionEffect" type="Button" parent="Menu/_/_"]
 margin_top = 40.0
-margin_right = 114.0
-margin_bottom = 50.0
+margin_right = 151.0
+margin_bottom = 60.0
+text = "heart explosion effect"
+
+[node name="_2" type="Control" parent="Menu/_/_"]
+margin_top = 65.0
+margin_right = 151.0
+margin_bottom = 75.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Container" type="Node2D" parent="."]
@@ -53,3 +59,4 @@ rect_min_size = Vector2( 0, 10 )
 position = Vector2( 700, 360 )
 
 [connection signal="pressed" from="Menu/_/_/ExplosionEffect" to="." method="_on_ExplosionEffect_pressed"]
+[connection signal="pressed" from="Menu/_/_/HeartExplosionEffect" to="." method="_on_HeartExplosionEffect_pressed"]

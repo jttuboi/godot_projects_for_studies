@@ -12,7 +12,7 @@ config_version=4
 
 config/name="playground"
 run/main_scene="res://World.tscn"
-config/icon="res://icon.png"
+config/icon="res://shared/dummy.png"
 
 [display]
 
