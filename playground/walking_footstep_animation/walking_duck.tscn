@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://walking_footstep_animation/duck.tscn" type="PackedScene" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.25, 0.5, 0.75, 1 )
+colors = PoolColorArray( 0.0352941, 1, 0, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 0, 0.278431, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 500
+
+[node name="WalkingDuck" type="Node2D"]
+
+[node name="Background" type="Polygon2D" parent="."]
+show_behind_parent = true
+rotation = 1.5708
+texture = SubResource( 2 )
+polygon = PoolVector2Array( 0, 100, 500, 100, 500, -100, 0, -100 )
+
+[node name="Duck" parent="." instance=ExtResource( 1 )]
