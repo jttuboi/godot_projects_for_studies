@@ -1,0 +1,111 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://circle_transition_screen/circle_transition_screen.shader" type="Shader" id=1]
+[ext_resource path="res://circle_transition_screen/circle_transition_screen.gd" type="Script" id=2]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 1 )
+shader_param/circle_size = 1.05
+shader_param/screen_width = 1280.0
+shader_param/screen_height = 720.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "transition_screen_go_loading"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Transition/Circle:material:shader_param/circle_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 1.05, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ChangeScreen:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "transition_screen_leave_loading"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Transition/Circle:material:shader_param/circle_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 1.05 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ChangeScreen:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[node name="CircleTransitionScreen" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Background" type="Polygon2D" parent="."]
+position = Vector2( 0, 2.24487 )
+color = Color( 0.490196, 0.215686, 0.215686, 1 )
+polygon = PoolVector2Array( -0.992676, -2.01498, 1.25226, 714.116, 1283.1, 716.361, 1276.37, 0.22995 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 563.476
+margin_top = 363.678
+margin_right = 679.476
+margin_bottom = 377.678
+text = "this is background"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ChangeScreen" type="Button" parent="."]
+margin_left = 568.649
+margin_top = 315.188
+margin_right = 672.649
+margin_bottom = 335.188
+text = "change screen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Transition" type="CanvasLayer" parent="."]
+
+[node name="Circle" type="ColorRect" parent="Transition"]
+material = SubResource( 1 )
+margin_right = 1280.0
+margin_bottom = 720.0
+mouse_filter = 2
+input_pass_on_modal_close_click = false
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+anims/transition_screen_go_loading = SubResource( 2 )
+anims/transition_screen_leave_loading = SubResource( 3 )
+
+[connection signal="pressed" from="ChangeScreen" to="." method="_on_ChangeScreen_pressed"]

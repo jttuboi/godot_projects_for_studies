@@ -131,6 +131,12 @@ func _on_RetroTvEffect_pressed():
 	_add_container(scene)
 
 
+func _on_CircleTransitionScreen_pressed():
+	_clear_container()
+	var scene = preload("res://circle_transition_screen/circle_transition_screen.tscn").instance()
+	_add_container(scene)
+
+
 func _add_container(node):
 	node.position = $ContainerCenter.position
 	$Container.add_child(node)
