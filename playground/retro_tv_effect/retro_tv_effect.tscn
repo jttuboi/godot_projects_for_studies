@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://shared/dummy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://retro_tv_effect/retro_tv_effect.gd" type="Script" id=2]
+[ext_resource path="res://retro_tv_effect/retro_tv_effect.shader" type="Shader" id=3]
+[ext_resource path="res://shared/godot.png" type="Texture" id=4]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 3 )
+shader_param/scale_factor = 1.2
+shader_param/color_distortion_effect = 1.0
+shader_param/scanline_count = 50.0
+
+[node name="RetroTvEffect" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="godot" type="Sprite" parent="."]
+scale = Vector2( 6, 6 )
+texture = ExtResource( 4 )
+
+[node name="Dummy" parent="." instance=ExtResource( 1 )]
+camera_enabled = true
+
+[node name="Dummy2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -67.7083, -29.3997 )
+
+[node name="Dummy3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 65.9265, -42.7631 )
+
+[node name="Dummy4" parent="." instance=ExtResource( 1 )]
+position = Vector2( -231.348, -30.0465 )
+
+[node name="Tv" type="CanvasLayer" parent="."]
+
+[node name="Screen" type="ColorRect" parent="Tv"]
+material = SubResource( 2 )
+margin_left = -250.0
+margin_top = -250.0
+margin_right = 250.0
+margin_bottom = 250.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

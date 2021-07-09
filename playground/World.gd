@@ -123,6 +123,14 @@ func _on_PerspectiveSprite_pressed():
 	_add_container(scene)
 
 
+# CC0 license
+# https://godotshaders.com/shader/retro-tv-shader/
+func _on_RetroTvEffect_pressed():
+	_clear_container()
+	var scene = preload("res://retro_tv_effect/retro_tv_effect.tscn").instance()
+	_add_container(scene)
+
+
 func _add_container(node):
 	node.position = $ContainerCenter.position
 	$Container.add_child(node)
