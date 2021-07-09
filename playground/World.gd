@@ -88,6 +88,15 @@ func _on_SpriteDeformationEffect_pressed():
 	_add_container(scene)
 
 
+# cc0 license
+# https://godotshaders.com/shader/simple-2d-dissolve/
+# https://www.youtube.com/watch?v=vz5VkRyDH54
+func _on_DissolveEffect_pressed():
+	_clear_container()
+	var scene = preload("res://dissolve_effect/dissolve_effect.tscn").instance()
+	_add_container(scene)
+
+
 # https://www.youtube.com/watch?v=eT9ztkG2PTU
 func _on_LaserEffect_pressed():
 	_clear_container()

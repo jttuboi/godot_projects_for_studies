@@ -107,28 +107,34 @@ margin_right = 184.0
 margin_bottom = 285.0
 text = "sprite deformation effect"
 
-[node name="LaserEffect" type="Button" parent="Menu/_/_"]
+[node name="DissolveEffect" type="Button" parent="Menu/_/_"]
 margin_top = 290.0
 margin_right = 184.0
 margin_bottom = 310.0
-text = "laser effect"
+text = "dissolve effect"
 
-[node name="FogEffect" type="Button" parent="Menu/_/_"]
+[node name="LaserEffect" type="Button" parent="Menu/_/_"]
 margin_top = 315.0
 margin_right = 184.0
 margin_bottom = 335.0
-text = "fog effect"
+text = "laser effect"
 
-[node name="PerspectiveSprite" type="Button" parent="Menu/_/_"]
+[node name="FogEffect" type="Button" parent="Menu/_/_"]
 margin_top = 340.0
 margin_right = 184.0
 margin_bottom = 360.0
+text = "fog effect"
+
+[node name="PerspectiveSprite" type="Button" parent="Menu/_/_"]
+margin_top = 365.0
+margin_right = 184.0
+margin_bottom = 385.0
 text = "perspective sprite"
 
 [node name="_2" type="Control" parent="Menu/_/_"]
-margin_top = 365.0
+margin_top = 390.0
 margin_right = 184.0
-margin_bottom = 375.0
+margin_bottom = 400.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Container" type="Node2D" parent="."]
@@ -147,6 +153,7 @@ position = Vector2( 700, 360 )
 [connection signal="pressed" from="Menu/_/_/WalkingFootstepAnimation" to="." method="_on_WalkingFootstepAnimation_pressed"]
 [connection signal="pressed" from="Menu/_/_/TypingAnimation" to="." method="_on_TypingAnimation_pressed"]
 [connection signal="pressed" from="Menu/_/_/SpriteDeformationEffect" to="." method="_on_SpriteDeformationEffect_pressed"]
+[connection signal="pressed" from="Menu/_/_/DissolveEffect" to="." method="_on_DissolveEffect_pressed"]
 [connection signal="pressed" from="Menu/_/_/LaserEffect" to="." method="_on_LaserEffect_pressed"]
 [connection signal="pressed" from="Menu/_/_/FogEffect" to="." method="_on_FogEffect_pressed"]
 [connection signal="pressed" from="Menu/_/_/PerspectiveSprite" to="." method="_on_PerspectiveSprite_pressed"]
