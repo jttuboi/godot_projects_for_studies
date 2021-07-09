@@ -1,7 +1,11 @@
 extends Node
 
 
-
+## https://kidscancode.org/godot_recipes/shaders/
+func _on_Basic_pressed():
+	_clear_container()
+	var scene = preload("res://basic/basic.tscn").instance()
+	_add_container(scene)
 
 
 ## https://www.youtube.com/watch?v=D7XSL0zBOwI
