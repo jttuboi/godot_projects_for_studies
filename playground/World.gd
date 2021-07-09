@@ -1,10 +1,21 @@
 extends Node
 
+# recommendation
+# https://thebookofshaders.com/
+
+
 
 ## https://kidscancode.org/godot_recipes/shaders/
 func _on_Basic_pressed():
 	_clear_container()
 	var scene = preload("res://basic/basic.tscn").instance()
+	_add_container(scene)
+
+
+# https://docs.godotengine.org/en/stable/tutorials/shading/your_first_shader/index.html
+func _on_Basic2_pressed():
+	_clear_container()
+	var scene = preload("res://basic2/basic2.tscn").instance()
 	_add_container(scene)
 
 
