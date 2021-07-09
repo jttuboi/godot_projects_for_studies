@@ -104,6 +104,15 @@ func _on_FogEffect_pressed():
 	_add_container(scene)
 
 
+# MIT license
+# https://godotshaders.com/shader/sprite-perspective-correection/
+# no license
+# https://github.com/Larrxi/godot-shader-skew-text
+func _on_PerspectiveSprite_pressed():
+	_clear_container()
+	var scene = preload("res://perspective_sprite/perspective_sprite.tscn").instance()
+	_add_container(scene)
+
 
 func _add_container(node):
 	node.position = $ContainerCenter.position

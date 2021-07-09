@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://shared/dummy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://shared/godot.png" type="Texture" id=3]
+[ext_resource path="res://perspective_sprite/perspective_sprite_image_bar.shader" type="Shader" id=4]
+[ext_resource path="res://perspective_sprite/perspective_sprite_follow_mouse.shader" type="Shader" id=5]
+[ext_resource path="res://perspective_sprite/dummy2.gd" type="Script" id=6]
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 5 )
+shader_param/width = 64.0
+shader_param/height = 64.0
+shader_param/mouse_position = Vector2( 0, 0 )
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 4 )
+shader_param/timeSin = 0.864
+shader_param/timeCos = 1.203
+shader_param/amplitudeX = -18.319
+shader_param/amplitudeY = 12.825
+
+[node name="PerspectiveSprite" type="Node2D"]
+
+[node name="Dummy" parent="." instance=ExtResource( 2 )]
+material = SubResource( 2 )
+script = ExtResource( 6 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="ImageBar" type="TextureRect" parent="HUD"]
+material = SubResource( 1 )
+margin_left = 118.772
+margin_top = 542.608
+margin_right = 182.772
+margin_bottom = 606.608
+texture = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="HUD"]
+margin_left = 135.589
+margin_top = 616.934
+margin_right = 180.589
+margin_bottom = 630.934
+text = "I'm bar"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="HUD"]
+margin_left = 616.232
+margin_top = 234.594
+margin_right = 783.232
+margin_bottom = 282.594
+text = "pass the mouse around
+the dummy and you'll
+see the perspective effect"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
