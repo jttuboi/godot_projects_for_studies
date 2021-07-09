@@ -48,7 +48,7 @@ __meta__ = {
 margin_top = 40.0
 margin_right = 184.0
 margin_bottom = 60.0
-text = "basic"
+text = "basic 2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -113,10 +113,16 @@ margin_right = 184.0
 margin_bottom = 310.0
 text = "laser effect"
 
-[node name="_2" type="Control" parent="Menu/_/_"]
+[node name="FogEffect" type="Button" parent="Menu/_/_"]
 margin_top = 315.0
 margin_right = 184.0
-margin_bottom = 325.0
+margin_bottom = 335.0
+text = "fog effect"
+
+[node name="_2" type="Control" parent="Menu/_/_"]
+margin_top = 340.0
+margin_right = 184.0
+margin_bottom = 350.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Container" type="Node2D" parent="."]
@@ -136,3 +142,4 @@ position = Vector2( 700, 360 )
 [connection signal="pressed" from="Menu/_/_/TypingAnimation" to="." method="_on_TypingAnimation_pressed"]
 [connection signal="pressed" from="Menu/_/_/SpriteDeformationEffect" to="." method="_on_SpriteDeformationEffect_pressed"]
 [connection signal="pressed" from="Menu/_/_/LaserEffect" to="." method="_on_LaserEffect_pressed"]
+[connection signal="pressed" from="Menu/_/_/FogEffect" to="." method="_on_FogEffect_pressed"]

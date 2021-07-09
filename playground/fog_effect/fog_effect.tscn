@@ -1,0 +1,63 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://shared/dummy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://fog_effect/fog_effect.shader" type="Shader" id=2]
+
+[sub_resource type="Gradient" id=2]
+offsets = PoolRealArray( 0.0391705, 0.248848, 0.421659, 0.672811, 0.868664, 0.960829 )
+colors = PoolColorArray( 0.339813, 0.360079, 0.664063, 1, 0.578167, 0.394287, 0.59375, 1, 0.723015, 0.726563, 0.272461, 1, 0.683594, 0.192261, 0.192261, 1, 0.138885, 0.867188, 0.218544, 1, 0.230576, 0.808594, 0.781499, 1 )
+
+[sub_resource type="GradientTexture" id=1]
+gradient = SubResource( 2 )
+width = 2000
+
+[sub_resource type="OpenSimplexNoise" id=4]
+period = 97.0
+persistence = 1.0
+lacunarity = 1.67
+
+[sub_resource type="NoiseTexture" id=5]
+width = 1280
+height = 720
+seamless = true
+noise = SubResource( 4 )
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 2 )
+shader_param/octaves = 6
+shader_param/starting_amplitude = 0.5
+shader_param/starting_frequency = 0.114
+shader_param/shift = 0.0
+shader_param/velocity = Vector2( 0.5, 0 )
+shader_param/fog_color = Color( 1, 1, 1, 1 )
+shader_param/noise = SubResource( 5 )
+
+[node name="FogEffect" type="Node2D"]
+
+[node name="Background2" type="ColorRect" parent="."]
+margin_left = -2241.0
+margin_top = -782.0
+margin_right = -889.0
+margin_bottom = 945.0
+color = Color( 0.0235294, 0.415686, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Background" type="Polygon2D" parent="."]
+position = Vector2( -1000, 0 )
+texture = SubResource( 1 )
+polygon = PoolVector2Array( 12.4014, -1055.68, -63.5986, 1016.32, 2000.4, 1040.32, 2004.4, -975.676 )
+
+[node name="Dummy" parent="." instance=ExtResource( 1 )]
+camera_enabled = true
+
+[node name="Fog" type="ColorRect" parent="."]
+material = SubResource( 3 )
+margin_left = -2032.45
+margin_top = -1106.07
+margin_right = 1099.55
+margin_bottom = 1301.93
+__meta__ = {
+"_edit_use_anchors_": false
+}

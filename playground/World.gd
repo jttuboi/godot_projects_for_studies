@@ -95,6 +95,16 @@ func _on_LaserEffect_pressed():
 	_add_container(scene)
 
 
+# CC0 license
+# https://godotshaders.com/shader/2d-fog-overlay/
+# uses fractal brownian motion
+func _on_FogEffect_pressed():
+	_clear_container()
+	var scene = preload("res://fog_effect/fog_effect.tscn").instance()
+	_add_container(scene)
+
+
+
 func _add_container(node):
 	node.position = $ContainerCenter.position
 	$Container.add_child(node)
