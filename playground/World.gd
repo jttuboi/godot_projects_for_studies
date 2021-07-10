@@ -3,15 +3,15 @@ extends Node
 # recommendation
 # https://thebookofshaders.com/
 
-
-
-## https://kidscancode.org/godot_recipes/shaders/
+# no license
+# https://kidscancode.org/godot_recipes/shaders/
 func _on_Basic_pressed():
 	_clear_container()
 	var scene = preload("res://basic/basic.tscn").instance()
 	_add_container(scene)
 
 
+# no license
 # https://docs.godotengine.org/en/stable/tutorials/shading/your_first_shader/index.html
 func _on_Basic2_pressed():
 	_clear_container()
@@ -19,7 +19,8 @@ func _on_Basic2_pressed():
 	_add_container(scene)
 
 
-## https://www.youtube.com/watch?v=D7XSL0zBOwI
+# no license
+# https://www.youtube.com/watch?v=D7XSL0zBOwI
 func _on_ExplosionEffect_pressed():
 	_clear_container()
 	var scene = preload("res://explosion_effect/particles.tscn").instance()
@@ -27,7 +28,8 @@ func _on_ExplosionEffect_pressed():
 	_add_container(scene)
 
 
-## https://www.youtube.com/watch?v=D7XSL0zBOwI
+# no license
+# https://www.youtube.com/watch?v=D7XSL0zBOwI
 func _on_HeartExplosionEffect_pressed():
 	_clear_container()
 	var scene = preload("res://explosion_effect/particles.tscn").instance()
@@ -36,14 +38,16 @@ func _on_HeartExplosionEffect_pressed():
 	_add_container(scene)
 
 
-## https://www.youtube.com/watch?v=53rDu0rMoss
+# no license
+# https://www.youtube.com/watch?v=53rDu0rMoss
 func _on_CreationByParticlesEffect_pressed():
 	_clear_container()
 	var scene = preload("res://creation_by_particles_effect/particles.tscn").instance()
 	_add_container(scene)
 
 
-## https://www.youtube.com/watch?v=iFJtXrwacY0
+# no license
+# https://www.youtube.com/watch?v=iFJtXrwacY0
 func _on_FlashAnimationEffect_pressed():
 	_clear_container()
 	var scene = preload("res://flash_effect/dummy.tscn").instance()
@@ -51,7 +55,8 @@ func _on_FlashAnimationEffect_pressed():
 	scene.initialize_by_animation()
 
 
-## https://www.youtube.com/watch?v=iFJtXrwacY0
+# no license
+# https://www.youtube.com/watch?v=iFJtXrwacY0
 func _on_FlashTweenEffect_pressed(): # this use the easiest way to do flash effect than using animation
 	_clear_container()
 	var scene = preload("res://flash_effect/dummy.tscn").instance()
@@ -59,7 +64,8 @@ func _on_FlashTweenEffect_pressed(): # this use the easiest way to do flash effe
 	scene.initialize_by_tween()
 
 
-## https://www.youtube.com/watch?v=iFJtXrwacY0
+# no license
+# https://www.youtube.com/watch?v=iFJtXrwacY0
 func _on_FlashTweenEffect2_pressed():
 	_clear_container()
 	var scene = preload("res://flash_effect/dummy.tscn").instance()
@@ -67,20 +73,23 @@ func _on_FlashTweenEffect2_pressed():
 	scene.initialize_by_tween_in_out()
 
 
-## https://www.youtube.com/watch?v=iFJtXrwacY0
+# no license
+# https://www.youtube.com/watch?v=iFJtXrwacY0
 func _on_WalkingFootstepAnimation_pressed():
 	_clear_container()
 	var scene = preload("res://walking_footstep_animation/walking_duck.tscn").instance()
 	_add_container(scene)
 
 
-## https://www.youtube.com/watch?v=iFJtXrwacY0
+# no license
+# https://www.youtube.com/watch?v=iFJtXrwacY0
 func _on_TypingAnimation_pressed():
 	_clear_container()
 	var scene = preload("res://typing_animation/typing_animation.tscn").instance()
 	_add_container(scene)
 
 
+# no license
 # https://www.youtube.com/watch?v=BZp8DwPdj4s
 func _on_SpriteDeformationEffect_pressed():
 	_clear_container()
@@ -97,6 +106,7 @@ func _on_DissolveEffect_pressed():
 	_add_container(scene)
 
 
+# no license
 # https://www.youtube.com/watch?v=eT9ztkG2PTU
 func _on_LaserEffect_pressed():
 	_clear_container()
@@ -131,9 +141,29 @@ func _on_RetroTvEffect_pressed():
 	_add_container(scene)
 
 
+# CC0 license
+# https://godotshaders.com/shader/simple-circle-transition-2/
 func _on_CircleTransitionScreen_pressed():
 	_clear_container()
 	var scene = preload("res://circle_transition_screen/circle_transition_screen.tscn").instance()
+	_add_container(scene)
+	scene.initialize_circle()
+
+
+# CC0 licence
+# https://godotshaders.com/shader/simple-circle-transition/
+func _on_OvalTransitionScreen_pressed():
+	_clear_container()
+	var scene = preload("res://circle_transition_screen/circle_transition_screen.tscn").instance()
+	_add_container(scene)
+	scene.initialize_oval()
+
+
+# no licence
+# https://www.youtube.com/watch?v=UI9JP5TNZ94
+func _on_FlameEffect_pressed():
+	_clear_container()
+	var scene = preload("res://flame_effect/flame_effect.tscn").instance()
 	_add_container(scene)
 
 
