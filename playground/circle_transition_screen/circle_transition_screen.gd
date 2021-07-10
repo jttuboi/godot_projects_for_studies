@@ -18,7 +18,20 @@ var colors = [
 
 func _ready():
 	position = Vector2.ZERO
-	($Transition/Circle.material as ShaderMaterial).set_shader_param("circle_size", 1.05)
+
+
+func initialize_circle():
+	var material = ShaderMaterial.new()
+	material.shader = preload("res://circle_transition_screen/circle_transition_screen.shader")
+	material.set_shader_param("circle_size", 1.05)
+	$Transition/Circle.material = material
+
+
+func initialize_oval():
+	var material = ShaderMaterial.new()
+	material.shader = preload("res://circle_transition_screen/oval_transition_screen.shader")
+	material.set_shader_param("circle_size", 1.05)
+	$Transition/Circle.material = material
 
 
 func _on_ChangeScreen_pressed():
