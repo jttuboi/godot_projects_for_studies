@@ -143,28 +143,34 @@ margin_right = 184.0
 margin_bottom = 435.0
 text = "retro tv effect"
 
-[node name="PerspectiveSprite" type="Button" parent="Menu/_/_"]
+[node name="RetroTvEffect2" type="Button" parent="Menu/_/_"]
 margin_top = 440.0
 margin_right = 184.0
 margin_bottom = 460.0
-text = "perspective sprite"
+text = "retro tv effect 2"
 
-[node name="CircleTransitionScreen" type="Button" parent="Menu/_/_"]
+[node name="PerspectiveSprite" type="Button" parent="Menu/_/_"]
 margin_top = 465.0
 margin_right = 184.0
 margin_bottom = 485.0
-text = "circle transition screen"
+text = "perspective sprite"
 
-[node name="OvalTransitionScreen" type="Button" parent="Menu/_/_"]
+[node name="CircleTransitionScreen" type="Button" parent="Menu/_/_"]
 margin_top = 490.0
 margin_right = 184.0
 margin_bottom = 510.0
+text = "circle transition screen"
+
+[node name="OvalTransitionScreen" type="Button" parent="Menu/_/_"]
+margin_top = 515.0
+margin_right = 184.0
+margin_bottom = 535.0
 text = "oval transition screen"
 
 [node name="_2" type="Control" parent="Menu/_/_"]
-margin_top = 515.0
+margin_top = 540.0
 margin_right = 184.0
-margin_bottom = 525.0
+margin_bottom = 550.0
 rect_min_size = Vector2( 0, 10 )
 
 [node name="Container" type="Node2D" parent="."]
@@ -189,6 +195,7 @@ position = Vector2( 700, 360 )
 [connection signal="pressed" from="Menu/_/_/FogEffect" to="." method="_on_FogEffect_pressed"]
 [connection signal="pressed" from="Menu/_/_/WaterWaveEffect" to="." method="_on_WaterWaveEffect_pressed"]
 [connection signal="pressed" from="Menu/_/_/RetroTvEffect" to="." method="_on_RetroTvEffect_pressed"]
+[connection signal="pressed" from="Menu/_/_/RetroTvEffect2" to="." method="_on_RetroTvEffect2_pressed"]
 [connection signal="pressed" from="Menu/_/_/PerspectiveSprite" to="." method="_on_PerspectiveSprite_pressed"]
 [connection signal="pressed" from="Menu/_/_/CircleTransitionScreen" to="." method="_on_CircleTransitionScreen_pressed"]
 [connection signal="pressed" from="Menu/_/_/OvalTransitionScreen" to="." method="_on_OvalTransitionScreen_pressed"]

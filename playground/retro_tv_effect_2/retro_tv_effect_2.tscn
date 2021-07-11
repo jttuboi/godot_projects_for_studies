@@ -1,0 +1,68 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://shared/dummy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://retro_tv_effect_2/retro_tv_effect_2.gd" type="Script" id=2]
+[ext_resource path="res://retro_tv_effect_2/retro_tv_effect_2.shader" type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=1]
+shader = ExtResource( 3 )
+shader_param/crt_curve = 0.02
+shader_param/crt_scan_line_color = 0.347
+shader_param/aperture_grille_rate = 0.4
+shader_param/rf_switch_esque_blur = 1.0
+shader_param/white_noise_rate = 0.0
+
+[node name="RetroTvEffect2" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TvSignal" type="HSlider" parent="."]
+margin_left = -63.7275
+margin_top = -320.873
+margin_right = 161.272
+margin_bottom = -304.873
+max_value = 1.0
+step = 0.01
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="TvSignal"]
+margin_left = -138.263
+margin_top = -0.127197
+margin_right = -12.2633
+margin_bottom = 13.8728
+text = "strength of tv signal"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Objects" type="CanvasLayer" parent="."]
+
+[node name="Tv" type="Control" parent="Objects"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Objects/Tv"]
+margin_left = -400.0
+margin_top = -300.0
+margin_right = 400.0
+margin_bottom = 300.0
+color = Color( 0.235294, 0.352941, 0.756863, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dummy" parent="Objects/Tv" instance=ExtResource( 1 )]
+
+[node name="Screen" type="ColorRect" parent="Objects/Tv"]
+material = SubResource( 1 )
+margin_left = -400.0
+margin_top = -300.0
+margin_right = 400.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="value_changed" from="TvSignal" to="." method="_on_TvSignal_value_changed"]

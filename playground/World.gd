@@ -141,6 +141,15 @@ func _on_RetroTvEffect_pressed():
 	_add_container(scene)
 
 
+# MIT license
+# https://godotshaders.com/shader/crt-shader/
+# https://bitbucket.org/arlez80/godot-crt/src/master/
+func _on_RetroTvEffect2_pressed():
+	_clear_container()
+	var scene = preload("res://retro_tv_effect_2/retro_tv_effect_2.tscn").instance()
+	_add_container(scene)
+
+
 # CC0 license
 # https://godotshaders.com/shader/simple-circle-transition-2/
 func _on_CircleTransitionScreen_pressed():
