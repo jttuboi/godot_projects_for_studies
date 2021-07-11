@@ -167,6 +167,14 @@ func _on_FlameEffect_pressed():
 	_add_container(scene)
 
 
+# MIT licence
+# https://www.youtube.com/playlist?list=PLhqJJNjsQ7KHqNMYmTwtsYTeTrqrRP_fP
+func _on_WaterWaveEffect_pressed():
+	_clear_container()
+	var scene = preload("res://water_wave_effect/water_wave_effect.tscn").instance()
+	_add_container(scene)
+
+
 func _add_container(node):
 	node.position = $ContainerCenter.position
 	$Container.add_child(node)
