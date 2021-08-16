@@ -1,0 +1,120 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/scenes/Card.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/scenes/Game.gd" type="Script" id=2]
+[ext_resource path="res://src/scenes/HUD.tscn" type="PackedScene" id=3]
+
+[node name="Game" type="Node"]
+script = ExtResource( 2 )
+
+[node name="Cards" type="Node2D" parent="."]
+
+[node name="Card1" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 100, 100 )
+
+[node name="Card2" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 180, 100 )
+
+[node name="Card3" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 260, 100 )
+
+[node name="Card4" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 340, 100 )
+
+[node name="Card5" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 420, 100 )
+
+[node name="Card6" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 500, 100 )
+
+[node name="Card7" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 100, 180 )
+
+[node name="Card8" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 180, 180 )
+
+[node name="Card9" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 260, 180 )
+
+[node name="Card10" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 340, 180 )
+
+[node name="Card11" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 420, 180 )
+
+[node name="Card12" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 500, 180 )
+
+[node name="Card13" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 100, 260 )
+
+[node name="Card14" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 180, 260 )
+
+[node name="Card15" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 260, 260 )
+
+[node name="Card16" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 340, 260 )
+
+[node name="Card17" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 420, 260 )
+
+[node name="Card18" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 500, 260 )
+
+[node name="Card19" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 100, 340 )
+
+[node name="Card20" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 180, 340 )
+
+[node name="Card21" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 260, 340 )
+
+[node name="Card22" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 340, 340 )
+
+[node name="Card23" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 420, 340 )
+
+[node name="Card24" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 500, 340 )
+
+[node name="Card25" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 100, 420 )
+
+[node name="Card26" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 180, 420 )
+
+[node name="Card27" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 260, 420 )
+
+[node name="Card28" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 340, 420 )
+
+[node name="Card29" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 420, 420 )
+
+[node name="Card30" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 500, 420 )
+
+[node name="Card31" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 100, 500 )
+
+[node name="Card32" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 180, 500 )
+
+[node name="Card33" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 260, 500 )
+
+[node name="Card34" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 340, 500 )
+
+[node name="Card35" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 420, 500 )
+
+[node name="Card36" parent="Cards" instance=ExtResource( 1 )]
+position = Vector2( 500, 500 )
+
+[node name="HUD" parent="." instance=ExtResource( 3 )]

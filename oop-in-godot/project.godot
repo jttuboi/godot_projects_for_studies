@@ -1,0 +1,43 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "",
+"class": "Cat",
+"language": "GDScript",
+"path": "res://src/scripts/basics_oop/cat.gd"
+}, {
+"base": "",
+"class": "Dog",
+"language": "GDScript",
+"path": "res://src/scripts/basics_oop/dog.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "Human",
+"language": "GDScript",
+"path": "res://src/scripts/basics_oop/human.gd"
+}, {
+"base": "Node2D",
+"class": "Vehicle",
+"language": "GDScript",
+"path": "res://src/scripts/substitute_of_interfaces/vehicle.gd"
+} ]
+_global_script_class_icons={
+"Cat": "",
+"Dog": "",
+"Human": "",
+"Vehicle": ""
+}
+
+[application]
+
+config/name="OOP Godot"
+run/main_scene="res://src/scenes/world.tscn"
+config/icon="res://icon.png"

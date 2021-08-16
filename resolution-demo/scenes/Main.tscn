@@ -1,0 +1,155 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/main.gd" type="Script" id=1]
+[ext_resource path="res://assets/video_standard.png" type="Texture" id=2]
+[ext_resource path="res://scenes/quit.gd" type="Script" id=3]
+[ext_resource path="res://scenes/display_resolution.gd" type="Script" id=4]
+[ext_resource path="res://scenes/Skeleton.tscn" type="PackedScene" id=5]
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+
+[node name="Background" type="TextureRect" parent="."]
+margin_right = 4098.0
+margin_bottom = 2163.0
+texture = ExtResource( 2 )
+
+[node name="Background_1920x1080" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+rect_min_size = Vector2( 1920, 1080 )
+color = Color( 0, 0.952941, 1, 0.356863 )
+
+[node name="Settings" type="Node" parent="."]
+
+[node name="Background" type="ColorRect" parent="Settings"]
+margin_right = 271.0
+margin_bottom = 190.0
+rect_scale = Vector2( 2.5784, 2.52611 )
+color = Color( 0.0980392, 0, 0.768627, 0.921569 )
+
+[node name="Info" type="Label" parent="Settings"]
+margin_left = 240.0
+margin_top = 30.3057
+margin_right = 240.0
+margin_bottom = 44.3057
+
+[node name="Quit" type="Button" parent="Settings"]
+margin_left = 240.0
+margin_top = 4.29277
+margin_right = 280.0
+margin_bottom = 24.2928
+text = "Quit"
+script = ExtResource( 3 )
+
+[node name="DisplayResolution" type="Node" parent="Settings"]
+script = ExtResource( 4 )
+
+[node name="Fullscreen" type="CheckBox" parent="Settings/DisplayResolution"]
+editor/display_folded = true
+margin_left = 74.8265
+margin_top = 24.8947
+margin_right = 98.8265
+margin_bottom = 48.8947
+align = 1
+
+[node name="Label" type="Label" parent="Settings/DisplayResolution/Fullscreen"]
+margin_left = -65.5857
+margin_top = 5.41103
+margin_right = 0.414261
+margin_bottom = 19.411
+text = "Fullscreen"
+align = 1
+valign = 1
+
+[node name="Borderless" type="CheckBox" parent="Settings/DisplayResolution"]
+editor/display_folded = true
+margin_left = 74.8265
+margin_top = 44.888
+margin_right = 98.8265
+margin_bottom = 68.888
+align = 1
+
+[node name="Label" type="Label" parent="Settings/DisplayResolution/Borderless"]
+margin_left = -65.5857
+margin_top = 5.41103
+margin_right = 0.414261
+margin_bottom = 19.411
+text = "Borderless"
+align = 1
+valign = 1
+
+[node name="Resizable" type="CheckBox" parent="Settings/DisplayResolution"]
+editor/display_folded = true
+margin_left = 75.2408
+margin_top = 64.299
+margin_right = 99.2408
+margin_bottom = 88.299
+align = 1
+
+[node name="Label" type="Label" parent="Settings/DisplayResolution/Resizable"]
+margin_left = -65.5857
+margin_top = 5.41103
+margin_right = 0.414261
+margin_bottom = 19.411
+text = "Resizable"
+align = 1
+valign = 1
+
+[node name="KeepScreenOn" type="CheckBox" parent="Settings/DisplayResolution"]
+editor/display_folded = true
+margin_left = 90.0
+margin_top = 83.71
+margin_right = 114.0
+margin_bottom = 107.71
+align = 1
+
+[node name="Label" type="Label" parent="Settings/DisplayResolution/KeepScreenOn"]
+margin_left = -81.0572
+margin_top = 5.41103
+margin_right = -0.0571518
+margin_bottom = 19.411
+text = "Keep playing"
+align = 1
+valign = 1
+
+[node name="Resolution" type="OptionButton" parent="Settings/DisplayResolution"]
+editor/display_folded = true
+margin_left = 80.3799
+margin_top = 4.29277
+margin_right = 180.38
+margin_bottom = 24.2928
+text = "Item 0"
+
+[node name="Label" type="Label" parent="Settings/DisplayResolution/Resolution"]
+margin_left = -72.5631
+margin_top = 4.27833
+margin_right = -4.56311
+margin_bottom = 18.2783
+text = "Resolution"
+align = 1
+valign = 1
+
+[node name="Samples" type="Node" parent="."]
+
+[node name="Skeleton1" parent="Samples" instance=ExtResource( 5 )]
+position = Vector2( 750, 510 )
+
+[node name="Skeleton2" parent="Samples" instance=ExtResource( 5 )]
+position = Vector2( 1870, 940 )
+
+[node name="Skeleton3" parent="Samples" instance=ExtResource( 5 )]
+position = Vector2( 2000, 960 )
+
+[node name="Skeleton4" parent="Samples" instance=ExtResource( 5 )]
+position = Vector2( 4040, 2010 )
+[connection signal="pressed" from="Settings/Quit" to="Settings/Quit" method="_on_Quit_pressed"]
+[connection signal="toggled" from="Settings/DisplayResolution/Fullscreen" to="Settings/DisplayResolution" method="_on_Fullscreen_toggled"]
+[connection signal="toggled" from="Settings/DisplayResolution/Borderless" to="Settings/DisplayResolution" method="_on_Borderless_toggled"]
+[connection signal="toggled" from="Settings/DisplayResolution/Resizable" to="Settings/DisplayResolution" method="_on_Resizable_toggled"]
+[connection signal="toggled" from="Settings/DisplayResolution/KeepScreenOn" to="Settings/DisplayResolution" method="_on_KeepScreenOn_toggled"]
+[connection signal="item_selected" from="Settings/DisplayResolution/Resolution" to="Settings/DisplayResolution" method="_on_Resolution_item_selected"]

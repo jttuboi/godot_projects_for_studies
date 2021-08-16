@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://src/scenes/EggSpawner.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/images/leaves.png" type="Texture" id=2]
+[ext_resource path="res://src/scenes/Basket.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/images/bg.png" type="Texture" id=4]
+[ext_resource path="res://src/scenes/Counter.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/scenes/Egg.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10, 30.9963 )
+
+[node name="Main" type="Node2D"]
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( 320, 479.736 )
+scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 4 )
+
+[node name="Leaves" type="Sprite" parent="Bg"]
+position = Vector2( 2.95133, -368.177 )
+scale = Vector2( 0.747338, 0.766596 )
+texture = ExtResource( 2 )
+
+[node name="Camera" type="Camera2D" parent="."]
+offset = Vector2( 320, 480 )
+current = true
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2( 320, 905 )
+scale = Vector2( 38, 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource( 1 )
+
+[node name="EggSpawner" parent="." instance=ExtResource( 1 )]
+Egg = ExtResource( 6 )
+
+[node name="Basket" parent="." instance=ExtResource( 3 )]
+
+[node name="Counter" parent="." instance=ExtResource( 5 )]

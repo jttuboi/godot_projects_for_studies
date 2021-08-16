@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/images/pistol.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 24.9929
+
+[node name="PistolDrop" type="Area2D"]
+visible = false
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 1.03917, -0.53101 )
+scale = Vector2( 0.306622, 0.304914 )
+texture = ExtResource( 1 )
+offset = Vector2( -6.6509, -0.106667 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )

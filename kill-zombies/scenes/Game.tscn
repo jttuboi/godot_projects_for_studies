@@ -1,0 +1,66 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/Game.gd" type="Script" id=1]
+[ext_resource path="res://assets/images/ground.png" type="Texture" id=2]
+[ext_resource path="res://scenes/player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/zombie.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://scenes/enemy/Spawner.gd" type="Script" id=5]
+[ext_resource path="res://scenes/enemy/Enemy.tscn" type="PackedScene" id=6]
+
+[sub_resource type="DynamicFont" id=1]
+size = 50
+font_data = ExtResource( 4 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 225, 398.708 )
+texture = ExtResource( 2 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 225, 400 )
+
+[node name="Screen" type="VBoxContainer" parent="."]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 40.0
+margin_bottom = 40.0
+alignment = 1
+
+[node name="Life" type="Label" parent="Screen"]
+margin_right = 240.0
+margin_bottom = 50.0
+custom_fonts/font = SubResource( 1 )
+text = "Life 0"
+
+[node name="Ammo" type="Label" parent="Screen"]
+margin_top = 54.0
+margin_right = 240.0
+margin_bottom = 104.0
+custom_fonts/font = SubResource( 1 )
+text = "Ammo 0"
+
+[node name="Zombies" type="Label" parent="Screen"]
+margin_top = 108.0
+margin_right = 240.0
+margin_bottom = 158.0
+custom_fonts/font = SubResource( 1 )
+text = "Zombies 0"
+
+[node name="Shoots" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
+
+[node name="Items" type="Node2D" parent="."]
+
+[node name="GunDelay" type="Timer" parent="."]
+one_shot = true
+
+[node name="Spawner" type="Node2D" parent="."]
+script = ExtResource( 5 )
+Enemy = ExtResource( 6 )
+[connection signal="shoot" from="Player" to="." method="_on_Player_shoot"]

@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/scenes/basics_oop/cat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/images/oscar.png" type="Texture" id=2]
+[ext_resource path="res://src/images/luna.png" type="Texture" id=3]
+[ext_resource path="res://src/scripts/substitute_of_interfaces/city.gd" type="Script" id=4]
+[ext_resource path="res://src/scenes/substitute_of_interfaces/airport.tscn" type="PackedScene" id=5]
+
+[node name="World" type="Node2D"]
+
+[node name="Oscar" parent="." instance=ExtResource( 1 )]
+position = Vector2( 204, 205 )
+_name = "Oscar"
+age = 3
+weight = 7.0
+color = Color( 0.470588, 0.286275, 0.0509804, 1 )
+texture_hair = "striped"
+texture = ExtResource( 2 )
+
+[node name="Luna" parent="." instance=ExtResource( 1 )]
+position = Vector2( 633.818, 196.991 )
+_name = "Luna"
+sex = 1
+age = 2
+weight = 5.0
+color = Color( 0.639216, 0.639216, 0.639216, 1 )
+texture_hair = "plain"
+texture = ExtResource( 3 )
+
+[node name="City" type="Node2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="Airport" parent="City" instance=ExtResource( 5 )]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/images/paddle.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
+
+onready var Ancor = $Ancor
+
+
+
+func _physics_process(delta):
+	# follow the mouse position
+	position.x = get_global_mouse_position().x
+
+
+func get_ancor_position():
+	return Ancor.global_position
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 40, 4 )
+
+[node name="Paddle" type="KinematicBody2D"]
+position = Vector2( 320, 320 )
+script = SubResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
+
+[node name="Ancor" type="Position2D" parent="."]
+position = Vector2( 0, 32 )

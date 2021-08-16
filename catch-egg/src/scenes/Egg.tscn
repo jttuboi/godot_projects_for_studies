@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/images/egg.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=3]
+script/source = "extends RigidBody2D
+
+
+
+func enter_inside_basket():
+	Events.emit_signal(\"egg_entered\")
+	queue_free()
+
+
+func _on_Egg_body_entered(body):
+	if body.name == \"Ground\":
+		queue_free()
+"
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 20.582
+
+[node name="Egg" type="RigidBody2D" groups=[
+"Eggs",
+]]
+position = Vector2( 270.672, 303.481 )
+contacts_reported = 1
+contact_monitor = true
+script = SubResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0, 4 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Egg_body_entered"]

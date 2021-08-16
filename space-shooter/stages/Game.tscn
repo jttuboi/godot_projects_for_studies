@@ -1,0 +1,131 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scripts/Camera.gd" type="Script" id=1]
+[ext_resource path="res://scenes/Stars.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Ship.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/SpawnerPowerUp.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/SpawnerEnemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/sprites/armor.png" type="Texture" id=6]
+[ext_resource path="res://assets/sprites/score.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/m5x7.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://assets/sprites/button_normal.png" type="Texture" id=9]
+[ext_resource path="res://assets/sprites/button_pressed.png" type="Texture" id=10]
+[ext_resource path="res://assets/sprites/button_hover.png" type="Texture" id=11]
+
+[sub_resource type="GDScript" id=1]
+resource_name = "Armor"
+script/source = "extends Sprite
+
+func _ready():
+	Utils.attach(\"Ship\", \"armor_changed\", self, \"_on_Armor_changed\")
+
+
+func _on_Armor_changed(armor):
+	# armor do ship foi definido como 4, entao a vida da nave mostra
+	# 4 barras. o sprite tem 5 frames, q vai de 4 ate 0, 4 eh a barra cheia
+	# 0 eh a barra vazia
+	frame = armor"
+
+[sub_resource type="GDScript" id=2]
+resource_name = "Score"
+script/source = "extends TextureRect
+
+var score = 0 setget set_score
+
+
+
+func _ready():
+	pass
+
+
+func set_score(new_score):
+	score = new_score
+	$Label.text = str(score)
+	
+	if (score > Game.bestscore):
+		Game.bestscore = score"
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 8 )
+
+[sub_resource type="GDScript" id=4]
+resource_name = "Menu"
+script/source = "extends TextureButton
+
+
+
+
+func _ready():
+	connect(\"pressed\", self, \"_on_Pressed\")
+	Utils.attach(\"Ship\", \"tree_exited\", self, \"_on_Ship_tree_exited\")
+
+
+func _on_Pressed():
+	get_tree().change_scene(\"res://stages/Menu.tscn\")
+
+
+func _on_Ship_tree_exited():
+	show()"
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+script = ExtResource( 1 )
+
+[node name="Stars" parent="." instance=ExtResource( 2 )]
+
+[node name="Ship" parent="." instance=ExtResource( 3 )]
+
+[node name="SpawnerPowerUp" parent="." instance=ExtResource( 4 )]
+
+[node name="SpawnerEnemy" parent="." instance=ExtResource( 5 )]
+
+[node name="Hud" type="CanvasLayer" parent="."]
+
+[node name="Armor" type="Sprite" parent="Hud"]
+position = Vector2( 10, 10 )
+texture = ExtResource( 6 )
+centered = false
+hframes = 5
+frame = 4
+script = SubResource( 1 )
+
+[node name="Score" type="TextureRect" parent="Hud"]
+margin_left = 123.0
+margin_top = 10.0
+margin_right = 170.0
+margin_bottom = 30.0
+texture = ExtResource( 7 )
+script = SubResource( 2 )
+
+[node name="Label" type="Label" parent="Hud/Score"]
+margin_left = 3.0
+margin_top = 1.0
+margin_right = 44.0
+margin_bottom = 15.0
+custom_fonts/font = SubResource( 3 )
+text = "0"
+align = 2
+
+[node name="Menu" type="TextureButton" parent="Hud"]
+visible = false
+margin_left = 67.0
+margin_top = 134.0
+margin_right = 114.0
+margin_bottom = 150.0
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 10 )
+texture_hover = ExtResource( 11 )
+script = SubResource( 4 )
+
+[node name="Label" type="Label" parent="Hud/Menu"]
+margin_left = 2.0
+margin_top = 1.0
+margin_right = 47.0
+margin_bottom = 14.0
+custom_fonts/font = SubResource( 3 )
+text = "MENU"
+align = 1
+valign = 1

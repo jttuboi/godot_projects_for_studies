@@ -1,0 +1,188 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/scripts/my_test/character_generator.gd" type="Script" id=1]
+
+[node name="CharacterGenerator" type="Control"]
+margin_right = 220.0
+margin_bottom = 201.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MyTestLabel" type="Label" parent="."]
+margin_left = 74.5664
+margin_top = 6.60708
+margin_right = 123.566
+margin_bottom = 20.6071
+text = "my test"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="."]
+margin_left = 7.28059
+margin_top = 37.7296
+margin_right = 204.281
+margin_bottom = 153.73
+custom_constants/hseparation = 15
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairStyleLabel" type="Label" parent="GridContainer"]
+margin_top = 3.0
+margin_right = 62.0
+margin_bottom = 17.0
+text = "hair style"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairStyleOption" type="OptionButton" parent="GridContainer"]
+margin_left = 77.0
+margin_right = 197.0
+margin_bottom = 20.0
+rect_min_size = Vector2( 120, 0 )
+
+[node name="HairColorLabel" type="Label" parent="GridContainer"]
+margin_top = 27.0
+margin_right = 62.0
+margin_bottom = 41.0
+text = "hair color"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HairColorPicker" type="ColorPickerButton" parent="GridContainer"]
+margin_left = 77.0
+margin_top = 24.0
+margin_right = 197.0
+margin_bottom = 44.0
+rect_min_size = Vector2( 50, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SexLabel" type="Label" parent="GridContainer"]
+margin_top = 51.0
+margin_right = 62.0
+margin_bottom = 65.0
+text = "sex"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SexOption" type="OptionButton" parent="GridContainer"]
+margin_left = 77.0
+margin_top = 48.0
+margin_right = 197.0
+margin_bottom = 68.0
+
+[node name="BodySizeLabel" type="Label" parent="GridContainer"]
+margin_top = 75.0
+margin_right = 62.0
+margin_bottom = 89.0
+text = "body size"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BodySizeOption" type="OptionButton" parent="GridContainer"]
+margin_left = 77.0
+margin_top = 72.0
+margin_right = 197.0
+margin_bottom = 92.0
+
+[node name="SkinColorLabel" type="Label" parent="GridContainer"]
+margin_top = 99.0
+margin_right = 62.0
+margin_bottom = 113.0
+text = "skin color"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SkinColorPicker" type="ColorPickerButton" parent="GridContainer"]
+margin_left = 77.0
+margin_top = 96.0
+margin_right = 197.0
+margin_bottom = 116.0
+rect_min_size = Vector2( 50, 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemsLabel" type="Label" parent="GridContainer"]
+margin_top = 153.0
+margin_right = 62.0
+margin_bottom = 167.0
+text = "items"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Items" type="VBoxContainer" parent="GridContainer"]
+margin_left = 77.0
+margin_top = 120.0
+margin_right = 197.0
+margin_bottom = 200.0
+
+[node name="Tool" type="HBoxContainer" parent="GridContainer/Items"]
+margin_right = 120.0
+margin_bottom = 24.0
+
+[node name="CheckBox" type="CheckBox" parent="GridContainer/Items/Tool"]
+margin_right = 24.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="GridContainer/Items/Tool"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 64.0
+margin_bottom = 19.0
+text = "a tool"
+
+[node name="Weapon" type="HBoxContainer" parent="GridContainer/Items"]
+margin_top = 28.0
+margin_right = 120.0
+margin_bottom = 52.0
+
+[node name="CheckBox" type="CheckBox" parent="GridContainer/Items/Weapon"]
+margin_right = 24.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="GridContainer/Items/Weapon"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 88.0
+margin_bottom = 19.0
+text = "a weapon"
+
+[node name="Apple" type="HBoxContainer" parent="GridContainer/Items"]
+margin_top = 56.0
+margin_right = 120.0
+margin_bottom = 80.0
+
+[node name="CheckBox" type="CheckBox" parent="GridContainer/Items/Apple"]
+margin_right = 24.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="GridContainer/Items/Apple"]
+margin_left = 28.0
+margin_top = 5.0
+margin_right = 82.0
+margin_bottom = 19.0
+text = "an apple"
+
+[node name="GenerateButton" type="Button" parent="."]
+margin_left = 56.3621
+margin_top = 290.816
+margin_right = 124.363
+margin_bottom = 310.816
+text = "generate"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="GenerateButton" to="." method="_on_GenerateButton_pressed"]

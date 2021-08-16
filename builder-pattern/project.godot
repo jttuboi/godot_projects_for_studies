@@ -1,0 +1,54 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "Node",
+"class": "Builder",
+"language": "GDScript",
+"path": "res://src/scripts/book_example/builder.gd"
+}, {
+"base": "Node2D",
+"class": "Car",
+"language": "GDScript",
+"path": "res://src/scripts/book_example/car.gd"
+}, {
+"base": "Node2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://src/scripts/my_test/character.gd"
+}, {
+"base": "Node",
+"class": "Director",
+"language": "GDScript",
+"path": "res://src/scripts/book_example/director.gd"
+}, {
+"base": "Node2D",
+"class": "Manual",
+"language": "GDScript",
+"path": "res://src/scripts/book_example/manual.gd"
+} ]
+_global_script_class_icons={
+"Builder": "",
+"Car": "",
+"Character": "",
+"Director": "",
+"Manual": ""
+}
+
+[application]
+
+config/name="Builder Pattern"
+run/main_scene="res://src/scenes/world.tscn"
+config/icon="res://icon.png"
+
+[autoload]
+
+Consts="*res://src/scripts/my_test/consts.gd"
+Events="*res://src/scripts/my_test/events.gd"

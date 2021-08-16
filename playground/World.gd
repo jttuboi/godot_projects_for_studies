@@ -6,6 +6,11 @@ extends Node
 # no license
 # https://kidscancode.org/godot_recipes/shaders/
 func _on_Basic_pressed():
+	var a = Vector2(0,0)
+	var b = Vector2(0, 3)
+	
+	prints("kkkkk",a.distance_to(b))
+	
 	_clear_container()
 	var scene = preload("res://basic/basic.tscn").instance()
 	_add_container(scene)
@@ -193,3 +198,7 @@ func _clear_container():
 	for node in $Container.get_children():
 		$Container.remove_child(node)
 		node.queue_free()
+
+
+func _on_World_item_rect_changed():
+	pass # Replace with function body.

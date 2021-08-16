@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scenes/Laser.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scripts/LaserShip.gd" type="Script" id=2]
+[ext_resource path="res://assets/sprites/laser_ship.png" type="Texture" id=3]
+[ext_resource path="res://assets/sounds/laser_ship.wav" type="AudioStream" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 3, 6 )
+
+[node name="LaserShip" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+velocity = Vector2( 0, -350 )
+
+[node name="Sprite" parent="." index="0"]
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" parent="." index="1"]
+shape = SubResource( 1 )
+
+[node name="VisibilityNotifier2D" parent="." index="2"]
+rect = Rect2( -3, -6, 6, 12 )
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="." index="3"]
+stream = ExtResource( 4 )

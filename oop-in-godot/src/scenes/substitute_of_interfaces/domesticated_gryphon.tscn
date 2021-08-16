@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/scripts/substitute_of_interfaces/domesticated_gryphon.gd" type="Script" id=1]
+[ext_resource path="res://src/scenes/substitute_of_interfaces/vehicle.tscn" type="PackedScene" id=2]
+
+
+[node name="DomesticatedGryphon" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
