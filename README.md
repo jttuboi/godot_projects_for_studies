@@ -145,3 +145,11 @@ It has a problema about interfaces of the OOP in Godot, because Godot has a tree
 Godot version: 3.2.2
 
 Book: Dive Into Design Patterns by Alexander Shvets
+
+##### Chosy Food
+
+It's an tutorial of 3D game and some stuffs to undestand the process of develop a game.
+
+https://www.youtube.com/watch?v=yRHN_WEulLc
+
+Godot version: 3.2.4

@@ -1,0 +1,266 @@
+[gd_scene load_steps=31 format=2]
+
+[ext_resource path="res://player.gd" type="Script" id=1]
+[ext_resource path="res://food_quiz.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/models/food_kit/apple.glb" type="PackedScene" id=3]
+[ext_resource path="res://food_label.gd" type="Script" id=4]
+[ext_resource path="res://assets/models/food_kit/grapes.glb" type="PackedScene" id=5]
+[ext_resource path="res://assets/models/food_kit/orange.glb" type="PackedScene" id=6]
+[ext_resource path="res://assets/models/blocky_characters/Faces/face_adventurer.png" type="Texture" id=7]
+[ext_resource path="res://assets/fonts/PoetsenOne-Regular.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://dialogue_manager.gd" type="Script" id=9]
+[ext_resource path="res://dialogues/intro.tres" type="Resource" id=10]
+[ext_resource path="res://food_chooser_ray.gd" type="Script" id=11]
+[ext_resource path="res://assets/models/blocky_characters/Skins/Advanced/skin_woman.png" type="Texture" id=12]
+[ext_resource path="res://assets/models/food_kit/donutSprinkles.glb" type="PackedScene" id=13]
+[ext_resource path="res://assets/models/food_kit/donutChocolate.glb" type="PackedScene" id=14]
+[ext_resource path="res://assets/models/food_kit/donut.glb" type="PackedScene" id=15]
+[ext_resource path="res://dialogues/fruit_chat.tres" type="Resource" id=16]
+[ext_resource path="res://dialogues/donut_chat.tres" type="Resource" id=17]
+[ext_resource path="res://runtime_data.tres" type="Resource" id=18]
+[ext_resource path="res://dialogues/fruit_correct.tres" type="Resource" id=19]
+[ext_resource path="res://dialogues/fruit_incorrect.tres" type="Resource" id=20]
+[ext_resource path="res://dialogues/donut_incorrect.tres" type="Resource" id=21]
+[ext_resource path="res://dialogues/donut_correct.tres" type="Resource" id=22]
+
+[sub_resource type="QuadMesh" id=1]
+size = Vector2( 10, 10 )
+
+[sub_resource type="CubeMesh" id=2]
+size = Vector3( 1, 1, 1 )
+
+[sub_resource type="ConcavePolygonShape" id=3]
+data = PoolVector3Array( -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, -0.5, 0.5, -0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5 )
+
+[sub_resource type="CapsuleShape" id=4]
+radius = 0.33
+
+[sub_resource type="CapsuleMesh" id=5]
+radius = 0.33
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = ExtResource( 8 )
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_texture = ExtResource( 12 )
+
+[node name="Main" type="Spatial"]
+
+[node name="Ground" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 1 )
+material/0 = null
+
+[node name="ComparisonCube" type="MeshInstance" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0 )
+mesh = SubResource( 2 )
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="ComparisonCube"]
+
+[node name="CollisionShape" type="CollisionShape" parent="ComparisonCube/StaticBody"]
+shape = SubResource( 3 )
+
+[node name="Player" type="KinematicBody" parent="."]
+transform = Transform( 0.989843, 0, 0.142163, 0, 1, 0, -0.142163, 0, 0.989843, 2.84586, 1, 2.75908 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+_runtime_data = ExtResource( 18 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Player"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.157588, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Player"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -0.155389, 0 )
+mesh = SubResource( 5 )
+material/0 = null
+
+[node name="Camera" type="Camera" parent="Player"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.373159, 0 )
+current = true
+
+[node name="FoodChooserRay" type="RayCast" parent="Player/Camera"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00229621, 0.0027467, 0.00813913 )
+enabled = true
+cast_to = Vector3( 0, 0, -2.5 )
+collide_with_areas = true
+collide_with_bodies = false
+script = ExtResource( 11 )
+_runtime_data = ExtResource( 18 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Crosshair" type="ColorRect" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -4.0
+margin_top = -4.0
+margin_right = 4.0
+margin_bottom = 4.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogUI" type="Control" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+_dialog_text = NodePath("TextBackground/DialogText")
+_avatar = NodePath("Avatar")
+_current_dialogue = ExtResource( 10 )
+_runtime_data = ExtResource( 18 )
+
+[node name="Avatar" type="TextureRect" parent="CanvasLayer/DialogUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -128.0
+margin_right = 128.0
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextBackground" type="ColorRect" parent="CanvasLayer/DialogUI"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 128.0
+margin_top = -85.0
+margin_right = 828.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogText" type="Label" parent="CanvasLayer/DialogUI/TextBackground"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 15.0
+margin_right = -15.0
+margin_bottom = -15.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "oi eu sou goku"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="FoodLabel" type="Label" parent="CanvasLayer"]
+visible = false
+anchor_right = 1.0
+margin_bottom = 60.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "food label"
+align = 1
+valign = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 0.905828, 0.0318751, 0.422445, -0.212418, 0.896933, 0.387801, -0.366544, -0.441016, 0.819238, 5.26314, 4.25464, 4.99682 )
+shadow_enabled = true
+
+[node name="FoodQuiz" parent="." instance=ExtResource( 2 )]
+_dialogue = ExtResource( 16 )
+_dialogue_correct = ExtResource( 19 )
+_dialogue_incorrect = ExtResource( 20 )
+_correct_food = NodePath("Food2")
+
+[node name="CollisionShape" parent="FoodQuiz/DialogTrigger" index="0"]
+transform = Transform( 0.369363, 0, 2.98023e-07, 0, 0.695111, 0, -4.47035e-08, 0, 2.48031, -0.402439, 0.210156, -0.0101068 )
+
+[node name="Food" parent="FoodQuiz" index="3"]
+food_mesh = NodePath("apple")
+food_name = "apple"
+
+[node name="apple" parent="FoodQuiz/Food" index="2" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, 0, -0.0808847, 0 )
+
+[node name="Food2" parent="FoodQuiz" index="4"]
+food_mesh = NodePath("grapes")
+food_name = "grapes"
+
+[node name="grapes" parent="FoodQuiz/Food2" index="2" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.199335, 0 )
+
+[node name="Food3" parent="FoodQuiz" index="5"]
+transform = Transform( 0.177912, 0, -0.407282, 0, 0.444445, 0, 0.407282, 0, 0.177912, -0.102364, 0.625424, 0.239451 )
+food_mesh = NodePath("orange")
+food_name = "orange"
+
+[node name="orange" parent="FoodQuiz/Food3" index="2" instance=ExtResource( 6 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0767529, 0 )
+
+[node name="FoodQuiz2" parent="." instance=ExtResource( 2 )]
+transform = Transform( -2.06191, -0.000168091, 0.900573, -1.93871e-05, 2.25, 0.000375528, -0.900573, 0.000336368, -2.06191, -3.30936, 0, -2.68167 )
+_dialogue = ExtResource( 17 )
+_dialogue_correct = ExtResource( 22 )
+_dialogue_incorrect = ExtResource( 21 )
+_correct_food = NodePath("Food")
+
+[node name="stallRed" parent="FoodQuiz2" index="0"]
+transform = Transform( 1, 0, 1.19209e-07, 0, 1, 0, -1.19209e-07, 0, 1, 0, 0, 0 )
+
+[node name="Body1" parent="FoodQuiz2/Npc" index="0"]
+material/0 = SubResource( 8 )
+
+[node name="Head1" parent="FoodQuiz2/Npc" index="1"]
+material/0 = SubResource( 8 )
+
+[node name="ArmLeft1" parent="FoodQuiz2/Npc" index="2"]
+material/0 = SubResource( 8 )
+
+[node name="ArmRight1" parent="FoodQuiz2/Npc" index="3"]
+material/0 = SubResource( 8 )
+
+[node name="LegLeft1" parent="FoodQuiz2/Npc" index="4"]
+material/0 = SubResource( 8 )
+
+[node name="LegRight1" parent="FoodQuiz2/Npc" index="5"]
+material/0 = SubResource( 8 )
+
+[node name="Food" parent="FoodQuiz2" index="3"]
+transform = Transform( 0.177912, 0, -0.407282, 0, 0.444444, 0, 0.407282, 0, 0.177912, -0.0823539, 0.625424, -0.267479 )
+food_mesh = NodePath("donut")
+food_name = "donut"
+
+[node name="donut" parent="FoodQuiz2/Food" index="2" instance=ExtResource( 15 )]
+transform = Transform( 0.999996, 0.00246601, -0.000831564, -0.00160257, 0.331754, -0.943364, -0.00205049, 0.943362, 0.331756, 0.000225782, -0.0576986, -0.000416756 )
+
+[node name="Food2" parent="FoodQuiz2" index="4"]
+food_mesh = NodePath("donutChocolate")
+food_name = "donut chocolate"
+
+[node name="donutChocolate" parent="FoodQuiz2/Food2" index="2" instance=ExtResource( 14 )]
+transform = Transform( 0.999997, 0.00246604, -0.000831573, -0.00143468, 0.255788, -0.966731, -0.0021713, 0.96673, 0.25579, -8.10623e-06, -0.0590665, 3.24249e-05 )
+
+[node name="Food3" parent="FoodQuiz2" index="5"]
+food_mesh = NodePath("donutSprinkles")
+food_name = "donut sprinkles"
+
+[node name="donutSprinkles" parent="FoodQuiz2/Food3" index="2" instance=ExtResource( 13 )]
+transform = Transform( 0.999997, 0.00246604, -0.000831579, -0.00153251, 0.299744, -0.954018, -0.0021034, 0.954017, 0.299747, -0.000226259, -0.074834, 0.000416517 )
+
+[editable path="FoodQuiz"]
+[editable path="FoodQuiz/Npc"]
+[editable path="FoodQuiz2"]
+[editable path="FoodQuiz2/Npc"]
