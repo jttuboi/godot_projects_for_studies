@@ -1,0 +1,13 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1727851255
+HelloWorld.tscn::PackedScene::4883035945128355805::1727842542::0::1::::<><>::
+icon.svg::CompressedTexture2D::4740196969673417344::1727842403::1727842408::1::::<><>::
+::res://ball/::1727851246
+Ball.tscn::PackedScene::7109135022844791011::1727851242::0::1::::<><>::uid://dv6rx85s1gy3i::::res://ball/assets/ballBlue_10.png
+Main.gd::GDScript::-1::1727845288::0::1::::<>Node<>::
+Main.tscn::PackedScene::1533139797434689326::1727851246::0::1::::<><>::res://ball/Main.gd<>uid://c8jyod611waxf::::res://ball/Ball.tscn<>uid://dkq1swbmmxmbq::::res://ball/assets/Bouncy Platform Long.png
+::res://ball/assets/::1727851242
+ballBlue_10.png::CompressedTexture2D::8698298520458212912::1727842921::1727851242::1::::<><>::
+Bouncy Platform Long.png::CompressedTexture2D::7895792475247486234::1727842921::1727851242::1::::<><>::
+Bouncy Platform Medium.png::CompressedTexture2D::3192301516354317244::1727842921::1727851242::1::::<><>::
+::res://hello_world/::1727851255
