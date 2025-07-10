@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bm2vd3rd2cr68"]
+
+[resource]
+resource_name = "leaf01"
+cull_mode = 2
+albedo_color = Color(0.36495632, 0.56509364, 0.16481902, 1)
+roughness = 0.7409091

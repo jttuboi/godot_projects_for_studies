@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://be8o17rs5oqip"]
+
+[resource]
+resource_name = "wood02"
+cull_mode = 2
+albedo_color = Color(0.6576916, 0.5301389, 0.32286173, 1)
+roughness = 0.81363636

@@ -1,0 +1,230 @@
+[remap]
+
+importer="scene"
+importer_version=1
+type="PackedScene"
+uid="uid://rfx1nvgje7re"
+path="res://.godot/imported/seashack.glb-d9e41e880269c970713e52023df37b44.scn"
+
+[deps]
+
+source_file="res://01_clecio_espindola_gi_probe_e_light/assets/seashack.glb"
+dest_files=["res://.godot/imported/seashack.glb-d9e41e880269c970713e52023df37b44.scn"]
+
+[params]
+
+nodes/root_type=""
+nodes/root_name=""
+nodes/root_script=null
+nodes/apply_root_scale=true
+nodes/root_scale=1.0
+nodes/import_as_skeleton_bones=false
+nodes/use_name_suffixes=true
+nodes/use_node_type_suffixes=true
+meshes/ensure_tangents=true
+meshes/generate_lods=true
+meshes/create_shadow_meshes=true
+meshes/light_baking=1
+meshes/lightmap_texel_size=0.2
+meshes/force_disable_compression=false
+skins/use_named_skins=true
+animation/import=true
+animation/fps=30
+animation/trimming=false
+animation/remove_immutable_tracks=true
+animation/import_rest_as_RESET=false
+import_script/path=""
+materials/extract=0
+materials/extract_format=0
+materials/extract_path=""
+_subresources={
+"materials": {
+"barrel": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/barrel.tres",
+"use_external/path": "uid://dtin8ygf80sjs"
+},
+"blanket": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/blanket.tres",
+"use_external/path": "uid://cxu73q5od7akp"
+},
+"blue-tint": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/blue-tint.tres",
+"use_external/path": "uid://c6ndgqhora285"
+},
+"chimney": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/chimney.tres",
+"use_external/path": "uid://c7xgjqde0hojb"
+},
+"cloth": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/cloth.tres",
+"use_external/path": "uid://ds1e5grr4hqv7"
+},
+"cloth2": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/cloth2.tres",
+"use_external/path": "uid://krcokhchccvh"
+},
+"fish": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/fish.tres",
+"use_external/path": "uid://c4ww6aa8oew5o"
+},
+"fisheye": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/fisheye.tres",
+"use_external/path": "uid://c0osvckw23ypw"
+},
+"fishingline": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/fishingline.tres",
+"use_external/path": "uid://1o6bsqktifkl"
+},
+"floater-01": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/floater-01.tres",
+"use_external/path": "uid://d1sqet12g1dcm"
+},
+"floater02": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/floater02.tres",
+"use_external/path": "uid://4epynhgcw85q"
+},
+"lamp": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/lamp.tres",
+"use_external/path": "uid://dwgabt5106atk"
+},
+"lamplight": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/lamplight.tres",
+"use_external/path": "uid://b733m754v7wc7"
+},
+"leaf01": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/leaf01.tres",
+"use_external/path": "uid://bm2vd3rd2cr68"
+},
+"leaf02": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/leaf02.tres",
+"use_external/path": "uid://cnid7ng3ynuer"
+},
+"leaf03": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/leaf03.tres",
+"use_external/path": "uid://c858ernj1jg2c"
+},
+"leaf04": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/leaf04.tres",
+"use_external/path": "uid://kjwp0jffpth8"
+},
+"plant-trunk": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/plant-trunk.tres",
+"use_external/path": "uid://bomlconlo2v0d"
+},
+"rock01": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/rock01.tres",
+"use_external/path": "uid://beejmlcmhigbh"
+},
+"rock02": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/rock02.tres",
+"use_external/path": "uid://c512rs0iwyk48"
+},
+"rock03": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/rock03.tres",
+"use_external/path": "uid://b2bxhlix3su0b"
+},
+"rock04": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/rock04.tres",
+"use_external/path": "uid://c5dj66qf38jd7"
+},
+"rock05": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/rock05.tres",
+"use_external/path": "uid://cdsvluacti8vm"
+},
+"roof": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/roof.tres",
+"use_external/path": "uid://cl4edadjx8vbh"
+},
+"sand": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/sand.tres",
+"use_external/path": "uid://djvu6meeqtkc8"
+},
+"seaplant": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/seaplant.tres",
+"use_external/path": "uid://dv4jay4itdyto"
+},
+"steel": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/steel.tres",
+"use_external/path": "uid://cqrlwttixr02t"
+},
+"tent": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/tent.tres",
+"use_external/path": "uid://dqdvwbxr857ni"
+},
+"tent01": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/tent01.tres",
+"use_external/path": "uid://bbikvhyvdos8e"
+},
+"tree-node": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/tree-node.tres",
+"use_external/path": "uid://pnwhfbcdguh2"
+},
+"vase-base": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/vase-base.tres",
+"use_external/path": "uid://bihawq8eyjkqo"
+},
+"water": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/water.tres",
+"use_external/path": "uid://begfcax8eqnn0"
+},
+"wood01": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/wood01.tres",
+"use_external/path": "uid://bxrduksnj7afk"
+},
+"wood02": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/wood02.tres",
+"use_external/path": "uid://be8o17rs5oqip"
+},
+"wood03": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/wood03.tres",
+"use_external/path": "uid://dmtcaagp8gci5"
+},
+"wood04": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/wood04.tres",
+"use_external/path": "uid://cmw5f6wos3nxi"
+},
+"wood05": {
+"use_external/enabled": true,
+"use_external/fallback_path": "res://01_clecio_espindola_gi_probe_e_light/assets/wood05.tres",
+"use_external/path": "uid://dvedun6ys1ba7"
+}
+}
+}
+gltf/naming_version=2
+gltf/embedded_image_handling=1

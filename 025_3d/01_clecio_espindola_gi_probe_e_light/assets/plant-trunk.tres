@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bomlconlo2v0d"]
+
+[resource]
+resource_name = "plant-trunk"
+cull_mode = 2
+albedo_color = Color(0.36740756, 0.2518087, 0.13203001, 1)

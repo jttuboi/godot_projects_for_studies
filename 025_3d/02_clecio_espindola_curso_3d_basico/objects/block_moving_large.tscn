@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cccqvp5fjj2x5"]
+
+[ext_resource type="PackedScene" uid="uid://dij37o2p4jy1p" path="res://02_clecio_espindola_curso_3d_basico/assets/block-moving-large.glb" id="1_ngwds"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o7opm"]
+points = PackedVector3Array(-0.40005875, 0, -0.5, -0.46838292, 0, -0.46838292, -0.40005875, 0.5, -0.5, 0.39996088, 0, -0.5, -0.5, 0, -0.40005875, -0.46838292, 0.5, -0.46838292, 0.39996088, 0.5, -0.5, 0.46828502, 0, -0.46838292, -0.5, 0.5, -0.40005875, -0.5, 0, 0.39996088, 0.46828502, 0.5, -0.46838292, 0.5, 0, -0.40005875, -0.5, 0.5, 0.39996088, -0.46838292, 0, 0.46828502, 0.5, 0.5, -0.40005875, 0.5, 0, 0.39996088, -0.46838292, 0.5, 0.46828502, -0.40005875, 0, 0.5, 0.5, 0.5, 0.39996088, 0.46828502, 0, 0.46828502, -0.40005875, 0.5, 0.5, 0.39996088, 0, 0.5, 0.46828502, 0.5, 0.46828502, 0.39996088, 0.5, 0.5)
+
+[node name="block-moving-large" instance=ExtResource("1_ngwds")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_o7opm")

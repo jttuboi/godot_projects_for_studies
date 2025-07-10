@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://d0jow3ruhcve4"]
+
+[ext_resource type="PackedScene" uid="uid://dhsmvowjh7wlc" path="res://02_gridmap_simples/gltf/road_corner_curved.gltf" id="1_el3lc"]
+[ext_resource type="PackedScene" uid="uid://dcrju42y5kp8v" path="res://02_gridmap_simples/gltf/road_straight.gltf" id="2_p3m6q"]
+[ext_resource type="PackedScene" uid="uid://bsit13a7xjcv5" path="res://02_gridmap_simples/gltf/road_corner.gltf" id="3_u4yig"]
+[ext_resource type="PackedScene" uid="uid://c2u7u3t83yy1x" path="res://02_gridmap_simples/gltf/road_straight_crossing.gltf" id="4_2x51d"]
+[ext_resource type="PackedScene" uid="uid://by8bjco4ek7pq" path="res://02_gridmap_simples/gltf/base.gltf" id="5_15onw"]
+[ext_resource type="PackedScene" uid="uid://do60tw0v8kvub" path="res://02_gridmap_simples/gltf/road_junction.gltf" id="6_ce40o"]
+[ext_resource type="PackedScene" uid="uid://dbj5iqof03usd" path="res://02_gridmap_simples/gltf/road_tsplit.gltf" id="7_roqav"]
+
+[node name="CityMeshLibrary" type="Node3D"]
+
+[node name="road_corner_curved2" parent="." instance=ExtResource("1_el3lc")]
+
+[node name="road_straight2" parent="." instance=ExtResource("2_p3m6q")]
+
+[node name="road_corner2" parent="." instance=ExtResource("3_u4yig")]
+
+[node name="road_straight_crossing2" parent="." instance=ExtResource("4_2x51d")]
+
+[node name="base2" parent="." instance=ExtResource("5_15onw")]
+
+[node name="road_junction2" parent="." instance=ExtResource("6_ce40o")]
+
+[node name="road_tsplit2" parent="." instance=ExtResource("7_roqav")]

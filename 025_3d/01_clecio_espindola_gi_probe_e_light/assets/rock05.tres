@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cdsvluacti8vm"]
+
+[resource]
+resource_name = "rock05"
+cull_mode = 2
+albedo_color = Color(0.15467352, 0.18230553, 0.22543368, 1)
+roughness = 0.5

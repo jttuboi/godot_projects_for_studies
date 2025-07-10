@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c5dj66qf38jd7"]
+
+[resource]
+resource_name = "rock04"
+cull_mode = 2
+albedo_color = Color(0.3281232, 0.33920854, 0.2903403, 1)
+roughness = 0.5

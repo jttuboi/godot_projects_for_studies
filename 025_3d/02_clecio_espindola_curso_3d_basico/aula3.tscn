@@ -1,0 +1,141 @@
+[gd_scene load_steps=19 format=3 uid="uid://djgjisxs82ph7"]
+
+[ext_resource type="Script" uid="uid://rgt6ghe4p84w" path="res://02_clecio_espindola_curso_3d_basico/world.gd" id="1_a1t46"]
+[ext_resource type="PackedScene" uid="uid://3snrr50rlock" path="res://02_clecio_espindola_curso_3d_basico/objects/crate.tscn" id="1_m4brg"]
+[ext_resource type="PackedScene" uid="uid://dlc1jlhkmkhpf" path="res://02_clecio_espindola_curso_3d_basico/objects/block_grass.tscn" id="2_mba8g"]
+[ext_resource type="PackedScene" uid="uid://c766i3pa7sonb" path="res://02_clecio_espindola_curso_3d_basico/objects/block_grass_long.tscn" id="3_a1t46"]
+[ext_resource type="PackedScene" uid="uid://cfbuxd4pjqlyj" path="res://02_clecio_espindola_curso_3d_basico/objects/block_grass_large.tscn" id="4_1e3u8"]
+[ext_resource type="PackedScene" uid="uid://df2jv70m0yxc1" path="res://02_clecio_espindola_curso_3d_basico/objects/block_grass_low_large.tscn" id="5_a0qw1"]
+[ext_resource type="PackedScene" uid="uid://crne4kp1b5knj" path="res://02_clecio_espindola_curso_3d_basico/objects/block_grass_large_slope.tscn" id="6_suqn2"]
+[ext_resource type="PackedScene" uid="uid://bhnh3lwwweira" path="res://02_clecio_espindola_curso_3d_basico/objects/block_grass_large_slope_steep.tscn" id="7_wdy2t"]
+[ext_resource type="PackedScene" uid="uid://cp0rpngv2pjl6" path="res://02_clecio_espindola_curso_3d_basico/objects/block_grass_low_hexagon.tscn" id="8_svqun"]
+[ext_resource type="PackedScene" uid="uid://qxpm727aen4v" path="res://02_clecio_espindola_curso_3d_basico/objects/block_grass_overhang_large.tscn" id="9_um46v"]
+[ext_resource type="PackedScene" uid="uid://cta1p6sx4ekqs" path="res://02_clecio_espindola_curso_3d_basico/objects/block_grass_large_slope_narrow.tscn" id="10_gvrbv"]
+[ext_resource type="PackedScene" uid="uid://8mmmnax7mj7j" path="res://02_clecio_espindola_curso_3d_basico/objects/character.tscn" id="12_1e3u8"]
+[ext_resource type="PackedScene" uid="uid://janj4wbon7lx" path="res://02_clecio_espindola_curso_3d_basico/objects/coin_gold.tscn" id="13_a0qw1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a0qw1"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_suqn2"]
+sky_material = SubResource("ProceduralSkyMaterial_a0qw1")
+
+[sub_resource type="Environment" id="Environment_wdy2t"]
+background_mode = 2
+sky = SubResource("Sky_suqn2")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_6mh28"]
+size = Vector2(10, 10)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6mh28"]
+points = PackedVector3Array(-5, 0, -5, -5, 0, 5, 5, 0, -5, 5, 0, 5)
+
+[node name="World" type="Node3D"]
+script = ExtResource("1_a1t46")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_wdy2t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301275, 0.25000003, -0.24999997, 0.80801255, 0.5334939, -0.43301278, 0.39951918, -0.8080126, 0, 8, 0)
+shadow_enabled = true
+shadow_opacity = 0.75
+
+[node name="crate" parent="." instance=ExtResource("1_m4brg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5595393, 0)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+mesh = SubResource("PlaneMesh_6mh28")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_6mh28")
+
+[node name="Level1" type="Node3D" parent="."]
+
+[node name="block-grass" parent="Level1" instance=ExtResource("2_mba8g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="block-grass-long" parent="Level1" instance=ExtResource("3_a1t46")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="block-grass-large" parent="Level1" instance=ExtResource("4_1e3u8")]
+
+[node name="block-grass-large2" parent="Level1" instance=ExtResource("4_1e3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+
+[node name="block-grass-low-large" parent="Level1" instance=ExtResource("5_a0qw1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+
+[node name="block-grass-large-slope" parent="Level1" instance=ExtResource("6_suqn2")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 0, -2)
+
+[node name="block-grass-large-slope-steep" parent="Level1" instance=ExtResource("7_wdy2t")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2, -0.167763, 4)
+
+[node name="block-grass-large3" parent="Level1" instance=ExtResource("4_1e3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="block-grass-low-hexagon" parent="Level1" instance=ExtResource("8_svqun")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 4)
+
+[node name="block-grass-overhang-large" parent="Level1" instance=ExtResource("9_um46v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9, 2, 0)
+
+[node name="block-grass-large-slope-narrow" parent="Level1" instance=ExtResource("10_gvrbv")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6, 1, 0)
+
+[node name="block-grass-large4" parent="Level1" instance=ExtResource("4_1e3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6)
+
+[node name="Character" parent="." instance=ExtResource("12_1e3u8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2354174, 1.6382971)
+
+[node name="CameraHub" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraHub"]
+transform = Transform3D(1, 0, 0, 0, 0.93884814, 0.34433165, 0, -0.34433165, 0.9388481, 0, 5.5019693, 13.346011)
+
+[node name="Coins" type="Node3D" parent="."]
+
+[node name="coin-gold" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 1.2056953, 0.64483345)
+
+[node name="coin-gold2" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 0.63459605, -4.368314)
+
+[node name="coin-gold3" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 1.2050858, 5.7763834)
+
+[node name="coin-gold4" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 2.282664, 0)
+
+[node name="coin-gold5" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 2.7833898, 0)
+
+[node name="coin-gold6" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 3.2773123, 0)
+
+[node name="coin-gold7" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 1.6770468, 1.6018417, 0)
+
+[node name="coin-gold8" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, -1.8157568, 1.231061, 0)
+
+[node name="coin-gold9" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 1.0276208, -1.8289663)
+
+[node name="coin-gold10" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 1.1659772, -2.5001981)
+
+[node name="coin-gold11" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 1.026304, -1.5289811)
+
+[node name="coin-gold12" parent="Coins" instance=ExtResource("13_a0qw1")]
+transform = Transform3D(-1, 0, -1.509958e-07, 0, 1, 0, 1.509958e-07, 0, -1, 0, 1.076433, 0)

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://4epynhgcw85q"]
+
+[resource]
+resource_name = "floater02"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.045828346, 0.1301204, 1)
+roughness = 0.5

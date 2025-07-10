@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c4ww6aa8oew5o"]
+
+[resource]
+resource_name = "fish"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.46310103, 0.10129383, 1)
+roughness = 0.5

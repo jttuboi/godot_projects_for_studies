@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://csmitvysc6eto"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_t6i1j"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.07633776, -0.9345168, -0.34763628, 0.1594258, -0.3556079, 0.92093796, -0.98425436, 0.0148801375, 0.17613229, -0.69009066, 0.31597736, -1.1886079)
+mesh = SubResource("BoxMesh_t6i1j")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.81381136, -0.1263833, 0.56721985, 0, 0.97606504, 0.21747887, -0.58112913, -0.17698678, 0.7943328, -0.51952124, 1.6521411, 1.5937023)

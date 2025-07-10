@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c7xgjqde0hojb"]
+
+[resource]
+resource_name = "chimney"
+cull_mode = 2
+albedo_color = Color(0.35753158, 0.37656528, 0.45056504, 1)
+metallic = 0.71363634
+roughness = 0.23636365

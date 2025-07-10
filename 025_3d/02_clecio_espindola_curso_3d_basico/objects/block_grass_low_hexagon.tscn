@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cp0rpngv2pjl6"]
+
+[ext_resource type="PackedScene" uid="uid://s7ky0djgo8ex" path="res://02_clecio_espindola_curso_3d_basico/assets/block-grass-low-hexagon.glb" id="1_12ovt"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i1b06"]
+points = PackedVector3Array(0.55, 0.37495106, 0.31741828, -0.00010764599, 0.37495106, 0.63508517, 0.4999315, 2.0037067e-30, 0.28857338, 0.55, 0.37495106, -0.31766692, 0.4999315, 0.5, 0.28857338, -0.00010764599, 0.5, 0.57727104, -0.50003916, 0.5, 0.28857338, -0.55, 0.37495106, 0.31741828, -0.50003916, 2.0037067e-30, 0.28857338, -0.00010764599, 2.0037067e-30, 0.57727104, 0.4999315, 2.0037067e-30, -0.28869766, 0.4999315, 0.5, -0.28869766, -0.00010764599, 2.0037067e-30, -0.5773954, -0.00010764599, 0.37495106, -0.63508517, -0.00010764599, 0.5, -0.5773954, -0.50003916, 0.5, -0.28869766, -0.55, 0.37495106, -0.31766692, -0.50003916, 2.0037067e-30, -0.28869766)
+
+[node name="block-grass-low-hexagon" instance=ExtResource("1_12ovt")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_i1b06")

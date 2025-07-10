@@ -1,0 +1,12 @@
+config_version=5
+
+[application]
+
+config/name="Gridmaps (4.4)"
+run/main_scene="uid://b53xm0ix8pbmq"
+config/features=PackedStringArray("4.4", "Forward Plus")
+config/icon="res://icon.svg"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/tile_to_gridmap/plugin.cfg")

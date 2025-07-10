@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dwgabt5106atk"]
+
+[resource]
+resource_name = "lamp"
+cull_mode = 2
+albedo_color = Color(0.2843177, 0.24487749, 0.3619234, 1)
+metallic = 0.6454545
+roughness = 0.19090909

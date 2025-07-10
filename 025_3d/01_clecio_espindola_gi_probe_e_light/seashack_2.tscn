@@ -1,0 +1,168 @@
+[gd_scene load_steps=42 format=3 uid="uid://bdyeb6h4bugxa"]
+
+[ext_resource type="PackedScene" uid="uid://rfx1nvgje7re" path="res://01_clecio_espindola_gi_probe_e_light/assets/seashack.glb" id="1_wbtqt"]
+[ext_resource type="Material" uid="uid://dmtcaagp8gci5" path="res://01_clecio_espindola_gi_probe_e_light/assets/wood03.tres" id="2_rf17e"]
+[ext_resource type="Material" uid="uid://bm2vd3rd2cr68" path="res://01_clecio_espindola_gi_probe_e_light/assets/leaf01.tres" id="3_ylh7w"]
+[ext_resource type="Material" uid="uid://kjwp0jffpth8" path="res://01_clecio_espindola_gi_probe_e_light/assets/leaf04.tres" id="4_iend2"]
+[ext_resource type="Material" uid="uid://cnid7ng3ynuer" path="res://01_clecio_espindola_gi_probe_e_light/assets/leaf02.tres" id="5_no8br"]
+[ext_resource type="Material" uid="uid://bbikvhyvdos8e" path="res://01_clecio_espindola_gi_probe_e_light/assets/tent01.tres" id="6_t3rik"]
+[ext_resource type="Material" uid="uid://dqdvwbxr857ni" path="res://01_clecio_espindola_gi_probe_e_light/assets/tent.tres" id="7_7pfwl"]
+[ext_resource type="Material" uid="uid://c7xgjqde0hojb" path="res://01_clecio_espindola_gi_probe_e_light/assets/chimney.tres" id="8_ae04d"]
+[ext_resource type="Material" uid="uid://ds1e5grr4hqv7" path="res://01_clecio_espindola_gi_probe_e_light/assets/cloth.tres" id="9_yiqyr"]
+[ext_resource type="Material" uid="uid://krcokhchccvh" path="res://01_clecio_espindola_gi_probe_e_light/assets/cloth2.tres" id="10_b8hjg"]
+[ext_resource type="Material" uid="uid://cxu73q5od7akp" path="res://01_clecio_espindola_gi_probe_e_light/assets/blanket.tres" id="11_hmn3a"]
+[ext_resource type="Material" uid="uid://cl4edadjx8vbh" path="res://01_clecio_espindola_gi_probe_e_light/assets/roof.tres" id="12_4et63"]
+[ext_resource type="Material" uid="uid://beejmlcmhigbh" path="res://01_clecio_espindola_gi_probe_e_light/assets/rock01.tres" id="13_si8r3"]
+[ext_resource type="Material" uid="uid://b2bxhlix3su0b" path="res://01_clecio_espindola_gi_probe_e_light/assets/rock03.tres" id="14_b3mep"]
+[ext_resource type="Material" uid="uid://cdsvluacti8vm" path="res://01_clecio_espindola_gi_probe_e_light/assets/rock05.tres" id="15_4w2ws"]
+[ext_resource type="Material" uid="uid://c512rs0iwyk48" path="res://01_clecio_espindola_gi_probe_e_light/assets/rock02.tres" id="16_lypiu"]
+[ext_resource type="Material" uid="uid://c5dj66qf38jd7" path="res://01_clecio_espindola_gi_probe_e_light/assets/rock04.tres" id="17_unr8f"]
+[ext_resource type="Material" uid="uid://cmw5f6wos3nxi" path="res://01_clecio_espindola_gi_probe_e_light/assets/wood04.tres" id="18_61spe"]
+[ext_resource type="Material" uid="uid://be8o17rs5oqip" path="res://01_clecio_espindola_gi_probe_e_light/assets/wood02.tres" id="19_3a62f"]
+[ext_resource type="Material" uid="uid://bxrduksnj7afk" path="res://01_clecio_espindola_gi_probe_e_light/assets/wood01.tres" id="20_ra0h8"]
+[ext_resource type="Material" uid="uid://dvedun6ys1ba7" path="res://01_clecio_espindola_gi_probe_e_light/assets/wood05.tres" id="21_m3myf"]
+[ext_resource type="Material" uid="uid://djvu6meeqtkc8" path="res://01_clecio_espindola_gi_probe_e_light/assets/sand.tres" id="22_sylrn"]
+[ext_resource type="Material" uid="uid://begfcax8eqnn0" path="res://01_clecio_espindola_gi_probe_e_light/assets/water.tres" id="23_8ehna"]
+[ext_resource type="Material" uid="uid://bihawq8eyjkqo" path="res://01_clecio_espindola_gi_probe_e_light/assets/vase-base.tres" id="24_h4e7u"]
+[ext_resource type="Material" uid="uid://c6ndgqhora285" path="res://01_clecio_espindola_gi_probe_e_light/assets/blue-tint.tres" id="25_syqqm"]
+[ext_resource type="Material" uid="uid://bomlconlo2v0d" path="res://01_clecio_espindola_gi_probe_e_light/assets/plant-trunk.tres" id="26_tcmxa"]
+[ext_resource type="Material" uid="uid://pnwhfbcdguh2" path="res://01_clecio_espindola_gi_probe_e_light/assets/tree-node.tres" id="27_nvool"]
+[ext_resource type="Material" uid="uid://1o6bsqktifkl" path="res://01_clecio_espindola_gi_probe_e_light/assets/fishingline.tres" id="28_mky6o"]
+[ext_resource type="Material" uid="uid://dtin8ygf80sjs" path="res://01_clecio_espindola_gi_probe_e_light/assets/barrel.tres" id="29_s3a32"]
+[ext_resource type="Material" uid="uid://cqrlwttixr02t" path="res://01_clecio_espindola_gi_probe_e_light/assets/steel.tres" id="30_8a5fb"]
+[ext_resource type="Material" uid="uid://d1sqet12g1dcm" path="res://01_clecio_espindola_gi_probe_e_light/assets/floater-01.tres" id="31_7ffao"]
+[ext_resource type="Material" uid="uid://4epynhgcw85q" path="res://01_clecio_espindola_gi_probe_e_light/assets/floater02.tres" id="32_v1v75"]
+[ext_resource type="Material" uid="uid://dv4jay4itdyto" path="res://01_clecio_espindola_gi_probe_e_light/assets/seaplant.tres" id="33_tih0p"]
+[ext_resource type="Material" uid="uid://dwgabt5106atk" path="res://01_clecio_espindola_gi_probe_e_light/assets/lamp.tres" id="34_hnwve"]
+[ext_resource type="Material" uid="uid://b733m754v7wc7" path="res://01_clecio_espindola_gi_probe_e_light/assets/lamplight.tres" id="35_wile4"]
+[ext_resource type="Material" uid="uid://c4ww6aa8oew5o" path="res://01_clecio_espindola_gi_probe_e_light/assets/fish.tres" id="36_4sm5p"]
+[ext_resource type="Material" uid="uid://c0osvckw23ypw" path="res://01_clecio_espindola_gi_probe_e_light/assets/fisheye.tres" id="37_y6ty8"]
+[ext_resource type="VoxelGIData" uid="uid://cin52ydw3pf17" path="res://01_clecio_espindola_gi_probe_e_light/assets/VoxelGI_data.res" id="38_s00vn"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wbtqt"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_rf17e"]
+sky_material = SubResource("ProceduralSkyMaterial_wbtqt")
+
+[sub_resource type="Environment" id="Environment_ylh7w"]
+background_mode = 2
+sky = SubResource("Sky_rf17e")
+tonemap_mode = 3
+ssao_enabled = true
+glow_enabled = true
+
+[node name="seashack2" instance=ExtResource("1_wbtqt")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="0"]
+environment = SubResource("Environment_ylh7w")
+
+[node name="stick" parent="." index="1"]
+surface_material_override/0 = ExtResource("2_rf17e")
+
+[node name="tree_leaves" parent="." index="2"]
+surface_material_override/0 = ExtResource("3_ylh7w")
+surface_material_override/1 = ExtResource("4_iend2")
+surface_material_override/2 = ExtResource("5_no8br")
+surface_material_override/3 = ExtResource("3_ylh7w")
+
+[node name="flag" parent="." index="3"]
+surface_material_override/0 = ExtResource("6_t3rik")
+surface_material_override/1 = ExtResource("7_7pfwl")
+
+[node name="chimney" parent="." index="5"]
+surface_material_override/0 = ExtResource("8_ae04d")
+
+[node name="clothes" parent="." index="6"]
+surface_material_override/0 = ExtResource("9_yiqyr")
+surface_material_override/1 = ExtResource("10_b8hjg")
+
+[node name="bed_sheet" parent="." index="7"]
+surface_material_override/0 = ExtResource("11_hmn3a")
+
+[node name="tent" parent="." index="8"]
+surface_material_override/0 = ExtResource("7_7pfwl")
+surface_material_override/1 = ExtResource("6_t3rik")
+
+[node name="roof" parent="." index="9"]
+surface_material_override/0 = ExtResource("12_4et63")
+
+[node name="rocks" parent="." index="10"]
+surface_material_override/0 = ExtResource("13_si8r3")
+surface_material_override/1 = ExtResource("14_b3mep")
+surface_material_override/2 = ExtResource("15_4w2ws")
+surface_material_override/3 = ExtResource("16_lypiu")
+surface_material_override/4 = ExtResource("17_unr8f")
+
+[node name="seashack" parent="." index="11"]
+surface_material_override/0 = ExtResource("18_61spe")
+surface_material_override/1 = ExtResource("19_3a62f")
+surface_material_override/2 = ExtResource("20_ra0h8")
+surface_material_override/3 = ExtResource("2_rf17e")
+surface_material_override/4 = ExtResource("21_m3myf")
+
+[node name="sand" parent="." index="12"]
+surface_material_override/0 = ExtResource("22_sylrn")
+
+[node name="sea" parent="." index="13"]
+surface_material_override/0 = ExtResource("23_8ehna")
+
+[node name="vase" parent="." index="14"]
+surface_material_override/0 = ExtResource("24_h4e7u")
+surface_material_override/1 = ExtResource("25_syqqm")
+surface_material_override/2 = ExtResource("26_tcmxa")
+
+[node name="trunk" parent="." index="15"]
+surface_material_override/0 = ExtResource("26_tcmxa")
+surface_material_override/1 = ExtResource("27_nvool")
+
+[node name="boat" parent="." index="16"]
+surface_material_override/0 = ExtResource("2_rf17e")
+surface_material_override/1 = ExtResource("20_ra0h8")
+
+[node name="fishrod" parent="." index="17"]
+surface_material_override/0 = ExtResource("2_rf17e")
+
+[node name="fish_line" parent="." index="18"]
+surface_material_override/0 = ExtResource("28_mky6o")
+
+[node name="barrel" parent="." index="19"]
+surface_material_override/0 = ExtResource("29_s3a32")
+surface_material_override/1 = ExtResource("30_8a5fb")
+
+[node name="plank" parent="." index="20"]
+surface_material_override/0 = ExtResource("2_rf17e")
+surface_material_override/1 = ExtResource("18_61spe")
+
+[node name="floater" parent="." index="21"]
+surface_material_override/0 = ExtResource("31_7ffao")
+surface_material_override/1 = ExtResource("32_v1v75")
+
+[node name="pillow" parent="." index="22"]
+surface_material_override/0 = ExtResource("11_hmn3a")
+
+[node name="seaweed" parent="." index="23"]
+surface_material_override/0 = ExtResource("33_tih0p")
+
+[node name="paddle" parent="." index="24"]
+surface_material_override/0 = ExtResource("2_rf17e")
+
+[node name="lamps" parent="." index="25"]
+surface_material_override/0 = ExtResource("34_hnwve")
+surface_material_override/1 = ExtResource("35_wile4")
+
+[node name="fishes" parent="." index="26"]
+surface_material_override/0 = ExtResource("8_ae04d")
+surface_material_override/1 = ExtResource("36_4sm5p")
+surface_material_override/2 = ExtResource("37_y6ty8")
+
+[node name="VoxelGI" type="VoxelGI" parent="." index="27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.231736, 0)
+subdiv = 0
+size = Vector3(25, 25, 25)
+data = ExtResource("38_s00vn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." index="28"]
+transform = Transform3D(-1, 6.696973e-08, -5.619428e-08, 0, 0.64278764, 0.76604444, 8.742278e-08, 0.76604444, -0.64278764, 0, 30, 0)
+shadow_enabled = true

@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://cxu73q5od7akp"]
+
+[resource]
+resource_name = "blanket"
+cull_mode = 2
+albedo_color = Color(0.76888067, 0.80538684, 0.88179404, 1)
+roughness = 0.9409091

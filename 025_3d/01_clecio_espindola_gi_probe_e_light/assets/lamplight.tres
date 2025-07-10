@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b733m754v7wc7"]
+
+[resource]
+resource_name = "lamplight"
+cull_mode = 2
+albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
+metallic = 0.10454545
+roughness = 0.2681818
+emission_enabled = true
+emission = Color(0.84203386, 0.93363357, 0.65191156, 1)

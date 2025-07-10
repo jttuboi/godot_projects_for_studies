@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dv4jay4itdyto"]
+
+[resource]
+resource_name = "seaplant"
+cull_mode = 2
+albedo_color = Color(0.064558566, 0.34480926, 0.20464051, 1)
+roughness = 0.85

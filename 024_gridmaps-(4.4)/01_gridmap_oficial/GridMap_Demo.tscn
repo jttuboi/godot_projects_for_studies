@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://jhy02bnds8nh"]
+
+[ext_resource type="MeshLibrary" uid="uid://cgc0xi27pl0uj" path="res://01_gridmap_oficial/MeshLibrary.tres" id="1"]
+
+[node name="GridMap_Demo" type="GridMap"]
+mesh_library = ExtResource("1")
+cell_center_y = false
+data = {
+"cells": PackedInt32Array(65534, 0, 12, 65534, 1, 12, 65534, 2, 12, 65534, 3, 12, 65533, 4, 8, 65534, 4, 0, 65535, 4, 1441800, 131071, 4, 1114124, 196607, 4, 1114124, 262143, 4, 1114124, 65533, 5, 1048584, 65534, 5, 655362, 65535, 5, 655368, 131071, 5, 1114124, 196607, 5, 1114124, 262143, 5, 1114124, 65534, 65535, 10, 65531, 2, 2, 65531, 3, 3, 65532, 2, 4, 65532, 4, 4, 65533, 1, 4, 65532, 65535, 4, 65532, 3, 5)
+}
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0358735, 0.482339, -0.87525, -0.0197528, 0.875985, 0.481934, 0.999161, 0, 0.0409521, -17.3353, 4.27635, 2.5183)
+light_specular = 0.5
+light_bake_mode = 1
+directional_shadow_max_distance = 200.0

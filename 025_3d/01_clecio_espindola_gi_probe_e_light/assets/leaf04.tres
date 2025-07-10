@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://kjwp0jffpth8"]
+
+[resource]
+resource_name = "leaf04"
+cull_mode = 2
+albedo_color = Color(0.06968842, 0.27438325, 0.004598947, 1)
+roughness = 0.71818185
