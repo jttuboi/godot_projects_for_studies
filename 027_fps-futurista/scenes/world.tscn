@@ -1,0 +1,132 @@
+[gd_scene load_steps=5 format=3 uid="uid://b6yxb0dqxx74u"]
+
+[ext_resource type="PackedScene" uid="uid://bhkvwrforyxe6" path="res://prefabs/player/player.tscn" id="1_k0juu"]
+[ext_resource type="PackedScene" uid="uid://dnx6fqhyxkd4f" path="res://prefabs/platforms/platform_b.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://b5uajlq6apen3" path="res://prefabs/platforms/platform_a.tscn" id="2_rwgxs"]
+[ext_resource type="Material" uid="uid://fl3mc1o1im85" path="res://assets/material/material_yellow.tres" id="3_4wyf3"]
+
+[node name="World" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Paths" type="Node3D" parent="."]
+
+[node name="Start" type="Node3D" parent="Paths"]
+
+[node name="PlatformA" parent="Paths/Start" instance=ExtResource("2_rwgxs")]
+skeleton = NodePath("../../..")
+
+[node name="PlatformA2" parent="Paths/Start" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -10)
+skeleton = NodePath("../../..")
+
+[node name="PlatformA3" parent="Paths/Start" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20)
+skeleton = NodePath("../../..")
+
+[node name="PlatformA4" parent="Paths/Start" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -30)
+skeleton = NodePath("../../..")
+
+[node name="Center" type="Node3D" parent="Paths"]
+
+[node name="PlatformA5" parent="Paths/Center" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -40)
+skeleton = NodePath("../../..")
+
+[node name="YellowPath" type="Node3D" parent="Paths"]
+
+[node name="PlatformB" parent="Paths/YellowPath" instance=ExtResource("1_nnsk1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -52.5, 0, -20)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformB2" parent="Paths/YellowPath" instance=ExtResource("1_nnsk1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -52.5, 0, -10)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformB6" parent="Paths/YellowPath" instance=ExtResource("1_nnsk1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -77.5, 0, -10)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformB7" parent="Paths/YellowPath" instance=ExtResource("1_nnsk1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -77.5, 0, -20)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformB8" parent="Paths/YellowPath" instance=ExtResource("1_nnsk1")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -77.5, 0, -30)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformB3" parent="Paths/YellowPath" instance=ExtResource("1_nnsk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55, 0, -2.5)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformB4" parent="Paths/YellowPath" instance=ExtResource("1_nnsk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65, 0, -2.5)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformB5" parent="Paths/YellowPath" instance=ExtResource("1_nnsk1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -75, 0, -2.5)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformA6" parent="Paths/YellowPath" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, -40)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformA7" parent="Paths/YellowPath" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 0, -40)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformA8" parent="Paths/YellowPath" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 0, -40)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformA9" parent="Paths/YellowPath" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -40)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformA10" parent="Paths/YellowPath" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -30)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformA11" parent="Paths/YellowPath" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40, 0, -50)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformA12" parent="Paths/YellowPath" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -40)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformA15" parent="Paths/YellowPath" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.51451, 0, -40)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformA13" parent="Paths/YellowPath" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50.0001, -3.4809113e-05, -29.9977)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="PlatformA14" parent="Paths/YellowPath" instance=ExtResource("2_rwgxs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -50, 0, -50)
+skeleton = NodePath("../../..")
+_material = ExtResource("3_4wyf3")
+
+[node name="Player" parent="." instance=ExtResource("1_k0juu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)

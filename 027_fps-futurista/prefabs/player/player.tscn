@@ -1,0 +1,194 @@
+[gd_scene load_steps=13 format=3 uid="uid://bhkvwrforyxe6"]
+
+[ext_resource type="Script" uid="uid://in0p6hiv0cxu" path="res://prefabs/player/player.gd" id="1_sxsrd"]
+[ext_resource type="Script" uid="uid://dlfey2j8jkdgs" path="res://prefabs/player/weapon.gd" id="2_binfn"]
+[ext_resource type="Script" uid="uid://bgl2rf84puhon" path="res://prefabs/player/animation.gd" id="2_klv5p"]
+[ext_resource type="PackedScene" uid="uid://icoaf3cxcaej" path="res://assets/models/weapons/Heavy/Heavy.fbx" id="2_rdx4y"]
+[ext_resource type="Material" uid="uid://dcxau0hqta0qr" path="res://assets/models/weapons/Heavy/material/heavy.tres" id="3_wv1mm"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tvfjm"]
+
+[sub_resource type="Animation" id="Animation_binfn"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_klv5p"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iylwk"]
+resource_name = "walk"
+length = 1.2
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.90000004, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.01, 0), Vector3(0, 0, 0), Vector3(0, -0.01, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6, 0.90000004, 1.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.017453292, 0.008726646, 0), Vector3(0, 0, 0), Vector3(-0.017453292, -0.008726646, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ev8v4"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Neck:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -0.01, 0), Vector3(0, 0, 0), Vector3(0, -0.01, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Neck:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.017453292, 0.008726646, 0), Vector3(0, 0, 0), Vector3(-0.017453292, -0.008726646, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vhck3"]
+resource_name = "jump"
+step = 0.05
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ev8v4"]
+_data = {
+&"RESET": SubResource("Animation_klv5p"),
+&"idle": SubResource("Animation_binfn"),
+&"jump": SubResource("Animation_vhck3"),
+&"run": SubResource("Animation_ev8v4"),
+&"walk": SubResource("Animation_iylwk")
+}
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_sxsrd")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_tvfjm")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="Neck" type="Node3D" parent="Head"]
+
+[node name="Camera" type="Camera3D" parent="Head/Neck"]
+
+[node name="Animation" type="AnimationPlayer" parent="Head" node_paths=PackedStringArray("character", "camera")]
+libraries = {
+&"": SubResource("AnimationLibrary_ev8v4")
+}
+script = ExtResource("2_klv5p")
+character = NodePath("../..")
+camera = NodePath("../Neck/Camera")
+
+[node name="Weapon" type="Node3D" parent="." node_paths=PackedStringArray("character", "head", "camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_binfn")
+character = NodePath("..")
+head = NodePath("../Head")
+camera = NodePath("../Head/Neck/Camera")
+
+[node name="Heavy" type="Node3D" parent="Weapon"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.125, -0.231, -0.356)
+
+[node name="Mesh" parent="Weapon/Heavy" instance=ExtResource("2_rdx4y")]
+transform = Transform3D(-5, 0, -4.371139e-07, 0, 5, 0, 4.371139e-07, 0, -5, 0, 0, 0)
+
+[node name="C_Body" parent="Weapon/Heavy/Mesh" index="0"]
+surface_material_override/0 = ExtResource("3_wv1mm")
+
+[node name="C_Trigger" parent="Weapon/Heavy/Mesh" index="1"]
+surface_material_override/0 = ExtResource("3_wv1mm")
+
+[node name="C_BeamBattery" parent="Weapon/Heavy/Mesh" index="2"]
+surface_material_override/0 = ExtResource("3_wv1mm")
+
+[node name="C_MainBattery" parent="Weapon/Heavy/Mesh" index="3"]
+surface_material_override/0 = ExtResource("3_wv1mm")
+
+[node name="C_Sight" parent="Weapon/Heavy/Mesh" index="4"]
+surface_material_override/0 = ExtResource("3_wv1mm")
+
+[node name="C_Bullet" parent="Weapon/Heavy/Mesh" index="5"]
+visible = false
+surface_material_override/0 = ExtResource("3_wv1mm")
+
+[node name="C_Mag" parent="Weapon/Heavy/Mesh" index="6"]
+surface_material_override/0 = ExtResource("3_wv1mm")
+
+[editable path="Weapon/Heavy/Mesh"]

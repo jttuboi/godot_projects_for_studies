@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5uajlq6apen3"]
+
+[ext_resource type="Material" uid="uid://e2vnb0knhs3r" path="res://assets/material/matreial_black.tres" id="1_xabcm"]
+[ext_resource type="Script" uid="uid://cnll66qahop4u" path="res://prefabs/platforms/platform.gd" id="2_mbn1l"]
+[ext_resource type="Material" uid="uid://c0kc5636s24rt" path="res://assets/material/material_white.tres" id="2_uslls"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_uslls"]
+size = Vector3(10, 2, 10)
+
+[sub_resource type="BoxMesh" id="BoxMesh_mbn1l"]
+size = Vector3(10.05, 0.2, 10.05)
+
+[node name="PlatformA" type="MeshInstance3D"]
+mesh = SubResource("BoxMesh_uslls")
+surface_material_override/0 = ExtResource("1_xabcm")
+script = ExtResource("2_mbn1l")
+
+[node name="Emission" type="Node3D" parent="."]
+
+[node name="EmissionA" type="MeshInstance3D" parent="Emission"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("BoxMesh_mbn1l")
+surface_material_override/0 = ExtResource("2_uslls")
+
+[node name="EmissionB" type="MeshInstance3D" parent="Emission"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+mesh = SubResource("BoxMesh_mbn1l")
+surface_material_override/0 = ExtResource("2_uslls")

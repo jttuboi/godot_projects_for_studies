@@ -1,0 +1,19 @@
+[gd_resource type="StandardMaterial3D" load_steps=6 format=3 uid="uid://dcxau0hqta0qr"]
+
+[ext_resource type="Texture2D" uid="uid://44l4wt0lhgua" path="res://assets/models/weapons/Heavy/Textures/Variation 08/Heavy_08_Albedo.png" id="1_yrcbf"]
+[ext_resource type="Texture2D" uid="uid://1obq8gyvwa2l" path="res://assets/models/weapons/Heavy/Textures/Shared/Heavy_Occlusion.png" id="2_ijjmq"]
+[ext_resource type="Texture2D" uid="uid://b7le4u26nltcf" path="res://assets/models/weapons/Heavy/Textures/Variation 08/Heavy_08_Emission.png" id="3_01gir"]
+[ext_resource type="Texture2D" uid="uid://b1hus3xqxh258" path="res://assets/models/weapons/Heavy/Textures/Variation 08/Heavy_08_Metallic.png" id="4_7wfge"]
+[ext_resource type="Texture2D" uid="uid://q6ymgfwtpa7y" path="res://assets/models/weapons/Heavy/Textures/Shared/Heavy_Normal.png" id="5_olgya"]
+
+[resource]
+albedo_texture = ExtResource("1_yrcbf")
+metallic = 1.0
+metallic_texture = ExtResource("4_7wfge")
+roughness = 0.5
+emission_enabled = true
+emission_texture = ExtResource("3_01gir")
+normal_enabled = true
+normal_texture = ExtResource("5_olgya")
+ao_enabled = true
+ao_texture = ExtResource("2_ijjmq")
